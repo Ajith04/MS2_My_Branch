@@ -1,0 +1,301 @@
+{
+  "admin": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
+  "followup": [
+    {
+      "id": "f9a8",
+      "name": "Ajith",
+      "mobile": "0755255050",
+      "course": "HTML",
+      "date": "2024-08-05",
+      "email": "sritharanajith04@gmail.com",
+      "address": "New road",
+      "description": "Next month will join"
+    },
+    {
+      "id": "a002",
+      "name": "Thanura",
+      "mobile": "0764263440",
+      "course": "Java",
+      "date": "2024-08-15",
+      "email": "thanura@gmail.com",
+      "address": "Jaffna",
+      "description": "May be"
+    },
+    {
+      "id": "ea93",
+      "name": "Aaruran",
+      "mobile": "0123456789",
+      "course": "C#",
+      "date": "2024-08-07",
+      "email": "1234@gmail.com",
+      "address": "Mullaitivu",
+      "description": "No"
+    },
+    {
+      "id": "06c0",
+      "name": "Narthana",
+      "mobile": "07798765432",
+      "course": "Angular",
+      "date": "2024-08-13",
+      "email": "sample@gmail.com",
+      "address": "Kilinochchi",
+      "description": "Yes"
+    },
+    {
+      "id": "55b4",
+      "name": "Kajitha",
+      "mobile": "076456258",
+      "course": "Java",
+      "date": "2024-08-11",
+      "email": "qwerty@gmail.com",
+      "address": "Pointpedro",
+      "description": "Yes"
+    }
+  ],
+  "students": [
+    {
+      "id": "903090979V",
+      "firstname": "Ajith",
+      "lastname": "Sritharan",
+      "course": "C#",
+      "batch": "II",
+      "date": "2024-08-04",
+      "mobile": "0755255050",
+      "email": "sritharanajith04@gmail.com",
+      "address": "New road",
+      "regfee": "1000.00",
+      "addifee": "3000.00"
+    },
+    {
+      "id": "123456789V",
+      "firstname": "Thayuran",
+      "lastname": "Sinnathampy",
+      "course": "CSS",
+      "batch": "III",
+      "date": "2024-08-12",
+      "mobile": "07712345678",
+      "email": "thayuran@gmail.com",
+      "address": "Kokuvil",
+      "regfee": "1000.00",
+      "addifee": "0.00"
+    },
+    {
+      "id": "987654321V",
+      "firstname": "Nirojan",
+      "lastname": "Periyathampy",
+      "course": "HTML",
+      "batch": "V",
+      "date": "2024-08-06",
+      "mobile": "0761593570",
+      "email": "niro@gmail.com",
+      "address": "Urumpiray",
+      "regfee": "1000.00",
+      "addifee": "1000.00"
+    },
+    {
+      "id": "159357456V",
+      "firstname": "Nitharsan",
+      "lastname": "Maniyam",
+      "course": "JavaScript",
+      "batch": "I",
+      "date": "2024-08-10",
+      "mobile": "0762586548",
+      "email": "nithu@gmail.com",
+      "address": "Mannar",
+      "regfee": "1000.00",
+      "addifee": "1500.00"
+    },
+    {
+      "id": "852357159V",
+      "firstname": "Logaash",
+      "lastname": "Shanmugam",
+      "course": "Angular",
+      "batch": "IV",
+      "date": "2024-08-14",
+      "mobile": "0752648971",
+      "email": "loogash@gmail.com",
+      "address": "Batticaloa",
+      "regfee": "1000.00",
+      "addifee": "0.00"
+    }
+  ],
+  "courses": [
+    {
+      "id": "001",
+      "coursename": "HTML",
+      "duration": "01 Month",
+      "fees": "1500.00",
+      "instructor": "Mr.Thuvaragan",
+      "syllabus": "Null"
+    },
+    {
+      "id": "002",
+      "coursename": "CSS",
+      "duration": "02 Months",
+      "fees": "3000.00",
+      "instructor": "Dr.Neil",
+      "syllabus": ""
+    },
+    {
+      "id": "003",
+      "coursename": "JavaScript",
+      "duration": "05 Months",
+      "fees": "6000.00",
+      "instructor": "Mr.Santharuban",
+      "syllabus": ""
+    },
+    {
+      "id": "004",
+      "coursename": "C#",
+      "duration": "06 Months",
+      "fees": "12000.00",
+      "instructor": "Mr.Aruran",
+      "syllabus": ""
+    },
+    {
+      "id": "005",
+      "coursename": "Angular",
+      "duration": "03 Months",
+      "fees": "6000.00",
+      "instructor": "Mr.Mayuran",
+      "syllabus": ""
+    }
+  ],
+  "payments": [
+    {
+      "id": "903090979V",
+      "date": "2024-08-04",
+      "fee": "3000.00"
+    },
+    {
+      "id": "123456789V",
+      "date": "2024-08-12",
+      "fee": "0.00"
+    },
+    {
+      "id": "987654321V",
+      "date": "2024-08-06",
+      "fee": "1000.00"
+    },
+    {
+      "id": "159357456V",
+      "date": "2024-08-10",
+      "fee": "1000.00"
+    },
+    {
+      "id": "852357159V",
+      "date": "2024-08-14",
+      "fee": "0.00"
+    },
+    {
+      "id": "903090979V",
+      "date": "2024-08-15",
+      "fee": "1000.00"
+    },
+    {
+      "id": "rtrt",
+      "date": "2024-10-09",
+      "fee": "20.00"
+    },
+    {
+      "id": "20036291",
+      "date": "2024-10-17",
+      "fee": "0.00"
+    },
+    {
+      "id": "20036291",
+      "date": "2024-10-09",
+      "fee": "0.00"
+    },
+    {
+      "id": "20036291",
+      "date": "2024-10-09",
+      "fee": "0.00"
+    },
+    {
+      "id": "7654",
+      "date": "2024-10-09",
+      "fee": "242.00"
+    }
+  ],
+  "modules": [
+    {
+      "id": "34da",
+      "title": "Introduction",
+      "course": "HTML",
+      "batch": "II",
+      "date": "2024-08-06",
+      "file": "C:\\fakepath\\editCourse.png",
+      "description": ""
+    },
+    {
+      "id": "f878",
+      "title": "API",
+      "course": "C#",
+      "batch": "III",
+      "date": "2024-08-14",
+      "file": "C:\\fakepath\\viewStudent.png",
+      "description": ""
+    }
+  ],
+  "expense": [
+    {
+      "id": "0ba3",
+      "title": "Mouse Purchase",
+      "date": "2024-08-07",
+      "price": "650.00",
+      "file": "C:\\fakepath\\addCourse.png",
+      "description": ""
+    },
+    {
+      "id": "1afc",
+      "title": "Petrol",
+      "date": "2024-08-12",
+      "price": "1500.00",
+      "file": "C:\\fakepath\\search.png",
+      "description": ""
+    },
+    {
+      "id": "c1cb",
+      "title": "Tea",
+      "date": "2024-08-12",
+      "price": "260.00",
+      "file": "C:\\fakepath\\addStudent.png",
+      "description": ""
+    }
+  ],
+  "registrationfee": [
+    {
+      "id": "1",
+      "regfee": "1000.00"
+    }
+  ],
+  "batch": [
+    {
+      "id": "2d58",
+      "batchname": "I"
+    },
+    {
+      "id": "9679",
+      "batchname": "II"
+    },
+    {
+      "id": "61b4",
+      "batchname": "III"
+    },
+    {
+      "id": "e855",
+      "batchname": "IV"
+    },
+    {
+      "id": "5c14",
+      "batchname": "V"
+    }
+  ]
+}

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./admindashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!-- ....................................................................................................-->
+    <!-- OffCanvas -->
+    <div class="offCanvas" id="offCanvas">
+        <div class="menu" id="menu1">
+            <img src="../assets/images/logo.png" alt="" class="logo">
+            <span class="material-symbols-outlined iconPadding" id="menu">menu</span>
+        </div>
+        <div>
+            <ul>
+                <li id="tabDashboard"><span class="material-symbols-outlined sm iconPadding">grid_view</span><h3>Dashboard</h3></li>
+                <li id="tabStudentManagement"><span class="material-symbols-outlined sm iconPadding">account_circle</span><h3>Student Management</h3></li>
+                <li id="tabCourseManagement"><span class="material-symbols-outlined sm iconPadding">menu_book</span><h3>Course Management</h3></li>
+                <li id="tabFeeManagement"><span class="material-symbols-outlined sm iconPadding">payments</span><h3>Fee Management</h3></li>
+                <li id="tabInstituteManagement"><span class="material-symbols-outlined sm iconPadding">account_balance</span><h3>Institute Management</h3></li>
+                <li id="tabStudyMaterials"><span class="material-symbols-outlined sm iconPadding">upload</span><h3>Study Materials</h3></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <!-- Main Body -->
+
+    <!-- ................................................................................................... -->
+    <!-- Top Bar -->
+    <div class="topbar" id="topbar">
+        <div class="left">
+            <span class="material-symbols-outlined iconPadding" id="menu2">menu</span>
+            <h3 id="itec">Information Technology Education Center</h3>
+        </div>
+        <div class="right">
+            <span class="material-symbols-outlined notify">notifications</span>
+        </div>
+    </div>
+    <!-- ......................................................................................................-->
+
+    <!-- Dashboard Dynamic Body -->
+    <div class="dashboard" id="dashboard">
+        <h2>Quick Access</h2>
+        <div class="dashRow">
+
+            <div class="dashcol">
+
+                <div class="subRow">
+                    <div class="icon add" id="addStudentShortcut" title="Add a New Student"><img src="../assets/icons/addStudent.png" alt="Add Student" class="ico"></div>
+                </div>
+                <div class="subRow">
+                    <h2>Add Student</h2>
+                </div>
+
+            </div>
+
+            <div class="dashcol">
+
+                <div class="subRow">
+                    <div class="icon edit" id="addCourseShortcut" title="Add a New Course"><img src="../assets/icons/addCourse.png" alt="Add Course" class="ico"></div>
+                </div>
+                <div class="subRow">
+                    <h2>Add Course</h2>
+                </div>
+
+            </div>
+
+            <div class="dashcol">
+
+                <div class="subRow">
+                    <div class="icon view" id="addPaymentShortcut" title="Add a Payment"><img src="../assets/icons/addPayment.png" alt="Add Payment" class="ico"></div>
+                </div>
+                <div class="subRow">
+                    <h2>Add Payment</h2>
+                </div>
+
+            </div>
+
+            <div class="dashcol">
+
+                <div class="subRow">
+                    <div class="icon delete" id="addExpenseShortcut" title="Add an Expense"><img src="../assets/icons/addExpense.png" alt="Add Expense" class="ico"></div>
+                </div>
+                <div class="subRow">
+                    <h2>Add Expense</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tableRow">
+            <div class="lastStudent" title="Last Added Students">
+                <p class="pHead">Last added students...</p>
+                <table id="lastStudents">
+                    <tr>
+                        <th>Stu ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Date of Join</th>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="lastCourse" title="Last Added Courses">
+                <p class="pHead">Last added courses...</p>
+                <table id="lastCourses">
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Name</th>
+                        <th>Fee</th>
+                        <th>Instructor</th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- student Management Dynamic Body -->
+    <div class="container" id="studentManagement">
+        <div class="row">
+            <div class="col">
+                <div class="icon add" id="addStudent" title="Add a New Student">
+                    <img src="../assets/icons/addStudent.png" alt="Add" class="ico">
+                </div>
+                <h2 class="menuTitle">Add New Student</h2>
+            </div>
+            <div class="col">
+                <div class="icon edit" id="editStudent" title="Edit a Student">
+                    <img src="../assets/icons/editStudent.png" alt="Edit" class="ico">
+                </div>
+                <h2 class="menuTitle">Edit Student Details</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="icon view" id="viewStudent" title="View All Students">
+                    <img src="../assets/icons/viewStudent.png" alt="View" class="ico">
+                </div>
+                <h2 class="menuTitle">View All Students</h2>
+            </div>
+            <div class="col">
+                <div class="icon delete" id="removeStudent" title="Remove a Student">
+                    <img src="../assets/icons/removeStudent.png" alt="Delete" class="ico">
+                </div>
+                <h2 class="menuTitle">Remove Student</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- ......................................................................................................... -->
+    <!-- Add New Student Modal -->
+    <div class="modalContainer" id="modalContainer">
+        <div class="addStudentModal">
+            <div class="toprow"><span class="close"><p class="closeButton" id="close">&times;</p></span></div>
+            <div class="tabContainer">
+                <div class="tab tab1" id="tab1">To Follow-up List</div>
+                <div class="tab tab2" id="tab2">As a New Student</div>
+                </div>
+
+            <!-- ...................................................................................................... -->
+            <!-- Follow-up -->
+            <form class="followup" id="followup">
+                <div class="row">
+                    <div class="modalCol"><label for="name">Name : </label></div>
+                    <div class="modalCol"><input type="text" id="name" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="mobile">Mobile : </label></div>
+                    <div class="modalCol"><input type="tel" id="mobile" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="course">Course : </label></div>
+                    <div class="modalCol"><input type="text" id="course" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="date">Date : </label></div>
+                    <div class="modalCol"><input type="date" id="date" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="email">Email : </label></div>
+                    <div class="modalCol"><input type="email" id="email"></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="address">Address : </label></div>
+                    <div class="modalCol"><input type="text" id="address"></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="description">Description : </label></div>
+                    <div class="modalCol"><textarea name="description" id="description"></textarea></div>
+                </div>
+                <div class="btnRow">
+                    <button class="secondaryBtn" id="followupCancel" type="button">Cancel</button>
+                    <button type="submit" class="primaryBtn">Add</button>
+                </div>
+            </form>
+                <!-- ....................................................................................... -->
+
+                <!-- Register -->
+            <form class="register" id="register">
+                <div class="row">
+                    <div class="modalCol"><label for="name">N.I.C No :</label></div>
+                    <div class="modalCol"><input type="text" id="stuId" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="mobile">F Name :</label></div>
+                    <div class="modalCol"><input type="text" id="stuFName" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="course">L Name : </label></div>
+                    <div class="modalCol"><input type="text" id="stuLName"></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="date">Course : </label></div>
+                    <div class="modalCol"><select name="" id="selectCourse" required></select></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="email">Batch : </label></div>
+                    <div class="modalCol"><select id="stuBatch"></select></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="address">Date : </label></div>
+                    <div class="modalCol"><input type="date" id="stuDate" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="description">Mobile : </label></div>
+                    <div class="modalCol"><input type="tel" id="stuMobile" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="description">Email : </label></div>
+                    <div class="modalCol"><input type="email" id="stuEmail"></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="description">Address : </label></div>
+                    <div class="modalCol"><input type="text" id="stuAddress"></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="description">Reg Fee : </label></div>
+                    <div class="modalCol"><input type="text" id="stuRegFee" required></div>
+                </div>
+                <div class="row">
+                    <div class="modalCol"><label for="description">Additional Fee : </label></div>
+                    <div class="modalCol"><input type="text" value="0.00" id="stuAddiFee"></div>
+                </div>
+                <div class="btnRow">
+                    <button class="secondaryBtn" id="registerCancel">Cancel</button>
+                    <button type="submit" class="primaryBtn">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+    
+
+    <!-- ....................................................................................................... -->
+    <!-- Edit Student Details Modal -->
+    <div class="modalContainer" id="editContainer">
+        <div class="editStudentModal editStudentBg">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="editClose">&times;</p></span>
+                <h2 class="editHeading">Edit Student Details</h2>
+            
+            </div>
+
+            <!-- .................................................................................................. -->
+            <!--Edit Student Modal body -->
+            <div class="followup" id="">
+                <div class="editRow">
+                    <div><label for="name" class="editCol">Search</label></div>
+                    <div><input type="text" id="searchId" placeholder="Search Student by ID..." class="editCol"></div>
+                    <div><span class="material-symbols-outlined editCol search" id="search">search</span></div>
+                </div>
+                <form id="editDynamic" class="edContainer">
+                    <div class="row">
+                        <div class="modalCol"><label for="name">N.I.C No : </label></div>
+                        <div class="modalCol"><input type="text" id="seId" disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">F Name : </label></div>
+                        <div class="modalCol"><input type="text" id="seFname" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">L Name : </label></div>
+                        <div class="modalCol"><input type="text" id="seLname" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Course : </label></div>
+                        <div class="modalCol"><input type="text" id="seCourse" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Batch : </label></div>
+                        <div class="modalCol"><input type="text" id="seBatch" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Mobile : </label></div>
+                        <div class="modalCol"><input type="text" id="seMobile" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Email : </label></div>
+                        <div class="modalCol"><input type="text" id="seEmail" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Address : </label></div>
+                        <div class="modalCol"><input type="text" id="seAddress" disabled required></div>
+                    </div>
+                    <div class="btnRow editBtnRow">
+                        <button class="secondaryBtn" id="studentEdit" type="button">Edit</button>
+                        <button class="primaryBtn">Update</button>
+                    </div>
+                </form>
+                    <p id="errMessage"></p>
+            </div> 
+        </div>  
+    </div>
+
+
+    <!-- Remove Student Modal -->
+    <div class="modalContainer" id="removeStudetModal">
+        <div class="editStudentModal deleteStudentBg">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="removeClose">&times;</p></span>
+                <h2 class="editHeading">Remove Student</h2>
+                
+            </div>
+
+            <!-- ........................................................................................ -->
+            <!--Remove Student Modal body -->
+            <div class="followup" id="">
+                <div class="editRow">
+                    <div><label for="name" class="editCol">Search</label></div>
+                    <div><input type="text" id="removeSearchId" placeholder="Search Student by ID..." class="editCol"></div>
+                    <div><span class="material-symbols-outlined editCol search" id="removeSearch">search</span></div>
+                </div>
+                <div id="removeDynamic" class="removeDynamic">
+                    <div class="col id" id="removeId"></div>
+                    <div class="col name" id="removeName"></div>
+                    <div class="col batch" id="removeBatch"></div>
+                    <div class="col btnCol"><button class="removeBtn" id="removeBtn">X</button></div>
+                </div>
+                <p id="removeError"></p>
+            </div>
+        </div>
+    </div>
+
+
+ 
+    <!-- Course Management Dynamic Body -->
+    <div class="container" id="courseManagement">
+        <div class="row">
+            <div class="col">
+                <div class="icon add" id="addCourse" title="Add a New Course">
+                    <img src="../assets/icons/addCourse.png" alt="Add" class="ico">
+                </div>
+                <h2 class="menuTitle">Add New Course</h2>
+            </div>
+            <div class="col">
+                <div class="icon edit" id="editCourse"  title="Edit a Course">
+                    <img src="../assets/icons/editCourse.png" alt="Edit" class="ico">
+                </div>
+                <h2 class="menuTitle">Edit Course Details</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="icon view" id="viewCourse" title="View All Courses">
+                    <img src="../assets/icons/viewCourse.png" alt="View" class="ico">
+                </div>
+                <h2 class="menuTitle">View All Courses</h2>
+            </div>
+            <div class="col">
+                <div class="icon delete" id="removeCourse" title="Remove a Course">
+                    <img src="../assets/icons/removeCourse.png" alt="Delete" class="ico">
+                </div>
+                <h2 class="menuTitle">Remove Course</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Course Modal Container-->
+    <div class="modalContainer" id="addCourseModal">
+        <div class="addStudentModal addCourseBody">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="addCourseClose">&times;</p></span>
+                <h2 class="editHeading">Add New Course</h2>
+            </div>
+            <form id="addCourseForm">
+            <div class="row firstRow">
+                <div class="modalCol"><label for="courseid">Course ID : </label></div>
+                <div class="modalCol"><input type="text" id="addCourseId" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="coursename">Course Name : </label></div>
+                <div class="modalCol"><input type="text" id="addCourseName" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="courseImage">Add Image : </label></div>
+                <div class="modalCol"><input type="file" id="addFile" accept="image/*"></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="duration">Duration : </label></div>
+                <div class="modalCol"><input type="text" id="addCourseDuration" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="fee">Fee : </label></div>
+                <div class="modalCol"><input type="text" id="addCourseFee" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="instructor">Instructor : </label></div>
+                <div class="modalCol"><input type="text" id="addCourseInstructor" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="syllabus">Syllabus : </label></div>
+                <div class="modalCol"><textarea name="" id="addCourseSyllabus"></textarea></div>
+            </div>
+            <div class="btnRow">
+                <button class="secondaryBtn" id="addCourseCancel" type="button">Cancel</button>
+                <button type="submit" class="primaryBtn">Add</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+    <!-- Edit Course Details Modal -->
+    <div class="modalContainer" id="editCourseModal">
+        <div class="editStudentModal editStudentBg">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="editcourseModalClose">&times;</p></span>
+                <h2 class="editHeading">Edit Course Details</h2>
+                
+            </div>
+
+            <!-- ......................................................................................... -->
+            <!--Edit Course Modal body -->
+            <div class="followup" id="">
+                <div class="editRow">
+                    <div><label for="name" class="editCol">Search</label></div>
+                    <div><input type="text" id="searchCourseId" placeholder="Search by course ID..." class="editCol"></div>
+                    <div><span class="material-symbols-outlined editCol search" id="courseSearch">search</span></div>
+                </div>
+                <form id="editCourseDynamic" class="edContainer">
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Course ID : </label></div>
+                        <div class="modalCol"><input type="text" id="editCourseId" disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Course Name : </label></div>
+                        <div class="modalCol"><input type="text" id="editCourseName" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Image : </label></div>
+                        <div class="modalCol"><input type="file" id="editImage" disabled required></div>
+                        <span id="oldImage"></span>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Duration : </label></div>
+                        <div class="modalCol"><input type="text" id="editDuration" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Fee : </label></div>
+                        <div class="modalCol"><input type="text" id="editFee" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Instructor : </label></div>
+                        <div class="modalCol"><input type="text" id="editInstructor" disabled required></div>
+                    </div>
+                    <div class="row">
+                        <div class="modalCol"><label for="name">Syllabus : </label></div>
+                        <div class="modalCol"><input type="text" id="editSyllabus" disabled></div>
+                    </div>
+                    <div class="btnRow editBtnRow">
+                        <button class="secondaryBtn" id="courseEditBtn" type="button">Edit</button>
+                        <button class="primaryBtn">Update</button>
+                    </div>
+                </form>
+                <p id="courseError"></p>
+            </div>
+        </div>
+    </div> 
+
+
+    <!-- Remove Course Modal Container-->
+    <div class="modalContainer" id="removeCourseModal">
+        <div class="editStudentModal deleteStudentBg">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="removeCourseClose">&times;</p></span>
+                <h2 class="editHeading">Remove Course</h2>
+                
+            </div>
+
+            <!-- ........................................................................................ -->
+            <!--Remove Course Modal body -->
+            <div class="followup" id="">
+                <div class="editRow">
+                    <div><label for="name" class="editCol">Search</label></div>
+                    <div><input type="text" id="courseSearchId" placeholder="Search Course by ID..." class="editCol"></div>
+                    <div><span class="material-symbols-outlined editCol search" id="removeCourseSearch">search</span></div>
+                </div>
+                <div id="removeCourseDynamic" class="removeDynamic">
+                    <div class="col id" id="cId"></div>
+                    <div class="col name" id="cName"></div>
+                    <div class="col batch" id="cInstructor"></div>
+                    <div class="col btnCol"><button class="removeBtn" id="deleteCourse">X</button></div>
+                </div>
+                <p id="removeCourseError"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fee Management Dynamic Body -->
+    <div class="container" id="feeManagement">
+        <div class="paymentTopRow">
+            <div class="searchCol">
+            <h2 style="padding: 10px;">Search by Student ID : </h2>
+                <input type="text" placeholder="Enter Student ID here..." id="paymentSearchInput">
+                
+                <img src="../assets/icons/search.png" alt="" width="40px" class="material-symbols-outlined editCol search paymentSearch" id="paymentSearchBtn">
+        </div>
+        <div class="BtnCol"><button class="paymentSearchBtn">Show all due</button></div>
+        </div>
+
+        <form class="singleStudentPayment" id="payDiv">
+            <table class="dynamicTable" id="paymentForm">
+                <tr>
+                    <th class="tCell">Stu ID</th>
+                    <th class="tCell">Name</th>
+                    <th class="tCell">Mobile</th>
+                    <th class="tCell payAmount">Due amount</th>
+                    <th class="tCell">Enter amount</th>
+                    <th>Date</th>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td id="idCell" class="tCell"></td>
+                    <td id="nameCell" class="tCell"></td>
+                    <td id="mobileCell" class="tCell"></td>
+                    <td id="payableCell" class="tCell"></td>
+                    <td id="amountCell" class="tCell"><input type="text" placeholder="Enter the amount here..." class="tCell" id="singlePayment" required></td>
+                    <td class="dateCell tCell"><input type="date" required id="paymentDate"></td>
+                    <td><button type="submit" class="addPay tCell"><span class="material-symbols-outlined">
+                        add
+                        </span></button></td>
+                    
+                </tr>
+
+            </table>
+            <div class="paymentHistoryLink" id="reminderBtn"><a href="">Send a Reminder</a></div>
+            <div class="paymentHistoryLink" id="paymentHistory"><a href="">View Payment History</a></div>
+        </form>
+
+        <div class="err" id="err"></div>
+        <div class="paymentHistory" id="payHistoryDiv">
+            <table>
+                <tr>
+                    <th class="historyTH">Date</th>
+                    <th class="historyTH">Amount</th>
+                </tr>
+                <tbody id="payHistory">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="err" id="historyErr"></div>
+      
+    </div>
+
+    
+
+    <!-- Institute Management Dynamic Body -->
+    <div class="container" id="instituteManagement">
+        <div>
+            <button class="imBtn regFee" id="changeRegFee" type="button">Change Reg fee</button>
+            <button class="imBtn newBatch" type="button" id="addBatch">Add new Batch</button>
+            <button class="imBtn addExpense" id="addExpenseBtn" type="button">Add Expense</button>
+        </div>
+        <div>
+            <button class="imBtn followupList" id="followupBtn">View follow-up list</button>
+            <button class="imBtn genReport" id="report">Generate Report</button>
+        </div>
+        <div class="bottomRow">
+            <h2>Course engagement</h2>
+            <h3 class="wiseHead">View students by</h3>
+            <label for="">Course:</label>
+            <select name="" id="imCourseList"></select>
+            <img src="../assets/icons/search.png" alt="" width="40px" class="material-symbols-outlined editCol search paymentSearch" id="searchByCourse">
+            <label for="">Batch:</label>
+            <select name="" id="imBatchList"></select>
+            <img src="../assets/icons/search.png" alt="" width="40px" class="material-symbols-outlined editCol search paymentSearch" id="searchByBatch">
+            
+        </div>
+
+
+        <div class="changeableDiv" id="byCourse">
+            <table class="moduleTable cOrB">
+                <tr class="tableHeading">
+                    <th class="moduleHead">Student ID</th>
+                    <th class="moduleHead">Name</th>
+                    <th class="moduleHead">Batch</th>
+                    <th class="moduleHead">Course</th>
+                    <th class="moduleHead">Date of Join</th>
+                    <th class="moduleHead">Mobile</th>
+                </tr>
+                <tbody id="courseOrBatch">
+        
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="changeableDiv" id="byBatch">
+            <table class="moduleTable cOrB">
+                <tr class="tableHeading">
+                    <th class="moduleHead">Student ID</th>
+                    <th class="moduleHead">Name</th>
+                    <th class="moduleHead">Batch</th>
+                    <th class="moduleHead">Course</th>
+                    <th class="moduleHead">Date of Join</th>
+                    <th class="moduleHead">Mobile</th>
+                </tr>
+                <tbody id="batchOrCourse">
+        
+                </tbody>
+            </table>
+        </div>
+
+    
+        <div id="errM" class="errM"></div>
+        
+    </div>
+
+
+
+    <!-- Reg Fee Change Modal -->
+    <div class="modalContainer" id="changeRegModal">
+        <div class="editStudentModal regBg">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="regClose">&times;</p></span>
+                <h2 class="editHeading">Change Registration Fee</h2>
+                
+            </div>
+
+            <!-- ........................................................................................ -->
+            <!--Reg Fee Change Modal body -->
+            <form class="followup" id="regForm">
+                <div class="row">
+                    <div class="modalCol"><label for="name">New amount : </label></div>
+                    <div class="modalCol"><input type="text" id="newReg" placeholder="Enter the new reg fee..." required></div>
+                </div>
+                <div class="btnRow editBtnRow">
+                    <button class="primaryBtn">Change</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Add New Batch Modal -->
+    <div class="modalContainer" id="addBatchModal">
+        <div class="editStudentModal addBatch">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="batchModalCloseBtn">&times;</p></span>
+                <h2 class="editHeading">Add New Batch</h2>
+                
+            </div>
+
+            <!-- ........................................................................................ -->
+            <!--Add New Batch Modal body -->
+            <form class="followup" id="addBatchForm">
+                <div class="row">
+                    <div class="modalCol"><label for="name">Enter Batch Name : </label></div>
+                    <div class="modalCol"><input type="text" id="batchName" placeholder="Enter batch name..." required></div>
+                </div>
+                <div class="btnRow editBtnRow">
+                    <button class="primaryBtn">Add</button>
+                </div>
+            </form>
+            <div id="exists"></div>
+        </div>
+    </div>
+
+
+    <!-- Add Expense Modal Container-->
+    <div class="modalContainer" id="addExpenseModal">
+        <div class="addStudentModal addExpenseBody">
+            <div class="editTopRow">
+                <span class="close"><p class="closeButton" id="expenseModalClose">&times;</p></span>
+                <h2 class="editHeading">Add New Expense</h2>
+            </div>
+            <form id="expenseForm">
+            <div class="row firstRow">
+                <div class="modalCol"><label for="">Title : </label></div>
+                <div class="modalCol"><input type="text" id="eTitle" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="">Date : </label></div>
+                <div class="modalCol"><input type="date" id="eDate" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="">Price : </label></div>
+                <div class="modalCol"><input type="text" id="ePrice" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="">Receipt : </label></div>
+                <div class="modalCol"><input type="file" id="eReceipt" required></div>
+            </div>
+            <div class="row">
+                <div class="modalCol"><label for="">Description : </label></div>
+                <div class="modalCol"><textarea name="" id="eDescription"></textarea></div>
+            </div>
+            
+            <div class="btnRow">
+                <button class="secondaryBtn" id="expenseCancelBtn" type="button">Cancel</button>
+                <button type="submit" class="primaryBtn">Add</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+
+    <!-- Study Materials Dynamic Body -->
+    <div class="container" id="studyMaterials">
+            <span class="material-symbols-outlined addModuleBtn" id="addmoduleBtn" title="Add a new module">add</span>
+            <h2>Upload Module</h2>
+
+            <div class="tableContainer">
+                <table class="moduleTable">
+                    <caption class="moduleCaption">Uploaded History</caption>
+                    <thead>
+                    <tr class="tableHeading">
+                        <th class="moduleHead">Title</th>
+                        <th class="moduleHead">Course</th>
+                        <th class="moduleHead">Batch</th>
+                        <th class="moduleHead">Published Date</th>
+                        <th class="moduleHead">Module</th>
+                        <th class="moduleHead">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="moduleTBody">
+            
+                </tbody>
+                </table>
+            </div>
+    </div>
+
+    
+<!-- Add New Course Modal Container-->
+<div class="modalContainer" id="addModuleModal">
+    <div class="addStudentModal moduleBg">
+        <div class="editTopRow">
+            <span class="close"><p class="closeButton" id="moduleModalClose">&times;</p></span>
+            <h2 class="editHeading">Add New Module</h2>
+        </div>
+        <form id="module">
+        <div class="row firstRow">
+            <div class="modalCol"><label for="courseid">Title : </label></div>
+            <div class="modalCol"><input type="text" id="moduleTitle" required></div>
+        </div>
+        <div class="row">
+            <div class="modalCol"><label for="coursename">Course : </label></div>
+            <div class="modalCol"><select name="" id="courseList"></select></div>
+        </div>
+        <div class="row">
+            <div class="modalCol"><label for="duration">Batch : </label></div>
+            <div class="modalCol"><select name="" id="moduleBatch" required></select></div>
+        </div>
+        <div class="row">
+            <div class="modalCol"><label for="fee">Date : </label></div>
+            <div class="modalCol"><input type="date" id="moduleDate" required></div>
+        </div>
+        <div class="row">
+            <div class="modalCol"><label for="instructor">Upload : </label></div>
+            <div class="modalCol"><input type="file" id="moduleFile" required></div>
+        </div>
+        <div class="row">
+            <div class="modalCol"><label for="syllabus">Description : </label></div>
+            <div class="modalCol"><textarea name="" id="ModuleDescription"></textarea></div>
+        </div>
+        <div class="btnRow">
+            <button class="secondaryBtn" id="moduleModalCancel" type="button">Cancel</button>
+            <button type="submit" class="primaryBtn">Add</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+
+<!-- Report Modal -->
+<div class="modalContainer" id="reportModal">
+    <div class="editStudentModal">
+        <div class="editTopRow">
+            <span class="close"><p class="closeButton" id="reportClose">&times;</p></span>
+            <h2 class="editHeading">Report</h2>
+            
+        </div>
+
+        <!-- ........................................................................................ -->
+        <!--Report Modal body -->
+        <div class="followup gen" id="reportTable">
+            <table id="genReportTable" class="">
+                <tr>
+                    <th class="genTHead">Total Reg Fee</th>
+                    <th class="genTHead">Total Course Fee</th>
+                    <th class="genTHead">Total Expense</th>
+                </tr>
+                
+            </table>
+        </div>
+        <div id="message" class="message"></div>
+        
+    </div>
+</div>
+
+    <script src="./adminDashboard.js" type="module"></script>
+        
+</body>
+</html>

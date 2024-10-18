@@ -1,0 +1,81 @@
+Developer note...
+
+Hi Tester!
+
+This is a web application for an IT institute to manage students, courses and payments.
+Now, I am focused only on the administrator side (Stake-holder - Administrator)
+The institute administrator can add, edit, view and delete students.
+The institute administrator can add, edit, view and delete courses.
+The institute administrator can manage the payments coming from students over their course.
+
+
+I used JSON server for the data storage. Please be sure npm/node installed on your computer and don't forget to run the npm command "npm run jsondata" in your terminal within this project folder path before run this project.
+
+Only one admin account is enough for an institute management system. Multiple admin accounts are useless, because every admins are going to login the same account.
+The admin's default username is "admin" and password is "admin". The admin can change their password if he/she gives the password to someone.
+
+*****************************************************************************************************************
+
+Used technologies
+1. HTML
+2. CSS
+3. JavaScript
+4. Google Icons
+
+Pure HTML, CSS and JavaScript
+100% Organic code
+
+*****************************************************************************************************************
+
+
+Total Scope, I have planned to be covered
+
+Admin Portal
+# Dashboard
+# Student Management (add, edit, view, delete)
+# Course Management (add, view, edit, delete)
+# Fee Management
+# Institute Management (Expenditures, profit or lose report, Course engagement(view students by course))
+# Study Materials - Upload studey materials batch-wise
+# Admin Notification - student sign-up, course request, payment due
+
+Student Portal
+# Stuent Profile
+# Course Request
+# Syllabus
+# Student Notification - Payment reminder, New course material
+
+******************************************************************************************************************
+
+
+Actually Covered Scope
+
+# Student Management
+# Course Management
+# Fee Management
+
+******************************************************************************************************************
+
+Need to be improved in the future
+
+1. Fixing some visual and functional bugs
+2. Known bugs
+    1. Close after click on button
+    2. Tab navigation
+3. Responsive design
+4. Exception handling
+
+******************************************************************************************************************
+
+Important
+
+Through this application you can manage a student for a single course only. Multiple courses for a single student feature will be added in the future.
+
+Creating this application as a SPA (Single Page Application) using Angular or React will improves it's quality in future.
+
+Thank you very much.
+Ajith.
+
+
+
+

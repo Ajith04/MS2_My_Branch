@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="./adminLogin.css"/>
+  </head>
+  <body>
+    <!-- Login-Page-Card -->
+    <div class="card">
+      <h1 class="loginHeading">Administrator login</h1>
+      <div class="frm1">
+        <div class="row">
+          <div class="col"><label for="">User name :</label></div>
+          <div class="col"><input type="text" id="username"/></div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="">Password :</label></div>
+          <div class="col"><input type="password" id="loginPassword"/></div>
+        </div>
+        <div class="btndiv">
+          <button class="primaryBtn" id="loginButton">Login</button>
+        </div>
+      </div>
+      <p class="changePasswordLabel" id="changePasswordLabel">
+        Change Password
+      </p>
+      <p id="error_message" class="errorMessage"></p>
+    </div>
+
+    <!-- Change-Password-Modal -->
+    <div class="modalContainer" id="modalContainer">
+      <div class="card changePasswordModal" id="changePasswordModal">
+        <div class="closediv">
+          <span class="close" id="close">&times;</span>
+        </div>
+        <h1 class="loginHeading">Change Password</h1>
+        <div class="frm2">
+        <div class="row">
+          <div class="col"><label for="">Old Password :</label></div>
+          <div class="col"><input type="password" id="oldPassword"></div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="">New Password :</label></div>
+          <div class="col"><input type="password" id="newPassword"></div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="">Confirm Password :</label></div>
+          <div class="col"><input type="password" id="confirmPassword"></div>
+        </div>
+      </div>
+        <div class="btnRow">
+          <button class="secondaryBtn" id="cancel">Cancel</button>
+          <button class="primaryBtn" id="changePassword">Change</button>
+        </div>
+        <p class="errorMessage" id="changePasswordError"></p>
+        <p class="errorMessage" id="changePasswordError"></p>
+      </div>
+    </div>
+
+    <script type="module" src="./adminLogin.js"></script>
+  </body>
+</html>

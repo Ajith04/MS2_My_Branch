@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITEC Student Portal</title>
+    <link rel="stylesheet" href="./studentDashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Top-Bar -->
+      <div class="topBar" id="topBar">
+        <div class="topBarLeft">
+          <span class="material-symbols-outlined" id="topBarMenu"> menu </span>
+          <div class="stuName">Ajith Sritharan</div>
+        </div>
+        <div class="notification">
+          <span class="material-symbols-outlined"> notifications </span>
+        </div>
+      </div>
+      <div class="underTopBar">
+        <div class="offCanvas" id="offCanvas">
+          <div class="offMenu">
+            <span class="material-symbols-outlined" id="offMenu">menu</span>
+          </div>
+          <div class="tabs">
+            <ul>
+              <li>
+                <a href="#" class="menuItem">
+                  <span class="material-symbols-outlined tabIcon">account_circle</span>
+                    <span class="default" id="profileTab">My Profile</span>
+                </a>
+              </li>
+              <li>
+                <a class="menuItem">
+                  <span class="material-symbols-outlined tabIcon">library_books</span>
+                  <span id="courseTab">Courses</span>
+                  </a>
+              </li>
+              <li>
+                <a href="#" class="menuItem"><span class="material-symbols-outlined tabIcon">credit_card</span>Payments</a>
+              </li>
+              <li>
+                <a href="#" class="menuItem"
+                  ><span class="material-symbols-outlined tabIcon">
+                    menu_book </span
+                  >Study Materials</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mainBody" id="mainBody">
+          <div class="myProfileDiv" id="myProfileDiv">
+            <div class="dpContainer">
+              <div class="dpCircle">
+                <button class="dpUpload">+</button>
+              </div>
+            </div>
+            <form class="detailsContainer">
+              <div class="left">
+                <label for="">N.I.C No : </label>
+                <input type="text" disabled />
+                <label for="">First Name : </label>
+                <input type="text" disabled />
+                <label for="">Last Name : </label>
+                <input type="text" disabled />
+              </div>
+              <div class="right">
+                <label for="">Mobile No : </label>
+                <input type="text" disabled />
+                <label for="">Email Id : </label>
+                <input type="text" disabled />
+                <label for="">Address : </label>
+                <input type="text" disabled />
+              </div>
+              <div class="editBtn">
+                <span class="material-symbols-outlined"> edit </span>
+              </div>
+              <button class="saveBtn">Save</button>
+            </form>
+
+            <div class="studentInfo">
+              <div class="followCourses"></div>
+              <div class="paymentLog"></div>
+            </div>
+          </div>
+
+          <div class="showCourseDiv" id="showCourseDiv">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./studentDashboard.js" type="module"></script>
+  </body>
+</html>

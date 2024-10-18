@@ -1,0 +1,425 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\dto\\requestdto\\courserequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\dto\\requestdto\\courserequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\enitity\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\enitity\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\dto\\responsedto\\studentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\dto\\responsedto\\studentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\dto\\requestdto\\studentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\dto\\requestdto\\studentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\repository\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\repository\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\repository\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\repository\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\dto\\responsedto\\entrollmentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\dto\\responsedto\\entrollmentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\dto\\responsedto\\courseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\dto\\responsedto\\courseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\iservices\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\iservices\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\irepository\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\irepository\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\enitity\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\enitity\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\repository\\entrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\repository\\entrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\enitity\\entrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\enitity\\entrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\irepository\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\irepository\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\iservices\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\iservices\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\dto\\requestdto\\entrollmentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\dto\\requestdto\\entrollmentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\services\\entrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\services\\entrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\iservices\\ientrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\iservices\\ientrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\irepository\\ientrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\irepository\\ientrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|x:\\my practices\\itec-institute\\api\\itec-api\\a_zapi\\a_zapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{890B09D1-D51B-4AED-8045-14E1CAB0A20E}|a_zApi\\a_zApi.csproj|solutionrelative:a_zapi\\a_zapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentResponse.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\ResponseDto\\StudentResponse.cs",
+              "RelativeDocumentMoniker": "a_zApi\\DTO\\ResponseDto\\StudentResponse.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\ResponseDto\\StudentResponse.cs",
+              "RelativeToolTip": "a_zApi\\DTO\\ResponseDto\\StudentResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:28:22.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IServices\\IStudentService.cs",
+              "RelativeDocumentMoniker": "a_zApi\\IServices\\IStudentService.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IServices\\IStudentService.cs",
+              "RelativeToolTip": "a_zApi\\IServices\\IStudentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T06:10:02.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Controllers\\StudentController.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "a_zApi\\Controllers\\StudentController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowCUAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T09:31:35.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EntrollmentRepository.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Repository\\EntrollmentRepository.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Repository\\EntrollmentRepository.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Repository\\EntrollmentRepository.cs",
+              "RelativeToolTip": "a_zApi\\Repository\\EntrollmentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T09:42:42.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CourseResponse.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\ResponseDto\\CourseResponse.cs",
+              "RelativeDocumentMoniker": "a_zApi\\DTO\\ResponseDto\\CourseResponse.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\ResponseDto\\CourseResponse.cs",
+              "RelativeToolTip": "a_zApi\\DTO\\ResponseDto\\CourseResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:26:01.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Controllers\\CourseController.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "a_zApi\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAxwCgAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T06:31:10.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseRequest.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\RequestDto\\CourseRequest.cs",
+              "RelativeDocumentMoniker": "a_zApi\\DTO\\RequestDto\\CourseRequest.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\RequestDto\\CourseRequest.cs",
+              "RelativeToolTip": "a_zApi\\DTO\\RequestDto\\CourseRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T05:47:26.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Student.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Enitity\\Student.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Enitity\\Student.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Enitity\\Student.cs",
+              "RelativeToolTip": "a_zApi\\Enitity\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:27:54.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentRequest.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\RequestDto\\StudentRequest.cs",
+              "RelativeDocumentMoniker": "a_zApi\\DTO\\RequestDto\\StudentRequest.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\RequestDto\\StudentRequest.cs",
+              "RelativeToolTip": "a_zApi\\DTO\\RequestDto\\StudentRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:35:13.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StudentRepository.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Repository\\StudentRepository.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Repository\\StudentRepository.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Repository\\StudentRepository.cs",
+              "RelativeToolTip": "a_zApi\\Repository\\StudentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:55:39.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EntrollmentResponse.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\ResponseDto\\EntrollmentResponse.cs",
+              "RelativeDocumentMoniker": "a_zApi\\DTO\\ResponseDto\\EntrollmentResponse.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\ResponseDto\\EntrollmentResponse.cs",
+              "RelativeToolTip": "a_zApi\\DTO\\ResponseDto\\EntrollmentResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:18:15.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourseRepository.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Repository\\CourseRepository.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Repository\\CourseRepository.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Repository\\CourseRepository.cs",
+              "RelativeToolTip": "a_zApi\\Repository\\CourseRepository.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAIwAYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T06:34:54.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Services\\StudentService.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Services\\StudentService.cs",
+              "RelativeToolTip": "a_zApi\\Services\\StudentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:56:00.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IStudentRepository.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IRepository\\IStudentRepository.cs",
+              "RelativeDocumentMoniker": "a_zApi\\IRepository\\IStudentRepository.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IRepository\\IStudentRepository.cs",
+              "RelativeToolTip": "a_zApi\\IRepository\\IStudentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:57:04.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Course.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Enitity\\Course.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Enitity\\Course.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Enitity\\Course.cs",
+              "RelativeToolTip": "a_zApi\\Enitity\\Course.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:27:27.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Entrollment.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Enitity\\Entrollment.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Enitity\\Entrollment.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Enitity\\Entrollment.cs",
+              "RelativeToolTip": "a_zApi\\Enitity\\Entrollment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T09:39:54.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ICourseService.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IServices\\ICourseService.cs",
+              "RelativeDocumentMoniker": "a_zApi\\IServices\\ICourseService.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IServices\\ICourseService.cs",
+              "RelativeToolTip": "a_zApi\\IServices\\ICourseService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T06:34:30.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ICourseRepository.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IRepository\\ICourseRepository.cs",
+              "RelativeDocumentMoniker": "a_zApi\\IRepository\\ICourseRepository.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IRepository\\ICourseRepository.cs",
+              "RelativeToolTip": "a_zApi\\IRepository\\ICourseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T06:33:13.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Services\\CourseService.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Services\\CourseService.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Services\\CourseService.cs",
+              "RelativeToolTip": "a_zApi\\Services\\CourseService.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAnwGAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T06:35:13.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Program.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Program.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Program.cs",
+              "RelativeToolTip": "a_zApi\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACYAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:33:47.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EntrollmentRequest.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\RequestDto\\EntrollmentRequest.cs",
+              "RelativeDocumentMoniker": "a_zApi\\DTO\\RequestDto\\EntrollmentRequest.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\DTO\\RequestDto\\EntrollmentRequest.cs",
+              "RelativeToolTip": "a_zApi\\DTO\\RequestDto\\EntrollmentRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T05:17:47.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EntrollmentService.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Services\\EntrollmentService.cs",
+              "RelativeDocumentMoniker": "a_zApi\\Services\\EntrollmentService.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\Services\\EntrollmentService.cs",
+              "RelativeToolTip": "a_zApi\\Services\\EntrollmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T09:43:11.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IEntrollmentService.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IServices\\IEntrollmentService.cs",
+              "RelativeDocumentMoniker": "a_zApi\\IServices\\IEntrollmentService.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IServices\\IEntrollmentService.cs",
+              "RelativeToolTip": "a_zApi\\IServices\\IEntrollmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T09:41:44.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IEntrollmentRepository.cs",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IRepository\\IEntrollmentRepository.cs",
+              "RelativeDocumentMoniker": "a_zApi\\IRepository\\IEntrollmentRepository.cs",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\IRepository\\IEntrollmentRepository.cs",
+              "RelativeToolTip": "a_zApi\\IRepository\\IEntrollmentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T09:41:11.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "a_zApi.csproj",
+              "DocumentMoniker": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\a_zApi.csproj",
+              "RelativeDocumentMoniker": "a_zApi\\a_zApi.csproj",
+              "ToolTip": "X:\\My practices\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\a_zApi.csproj",
+              "RelativeToolTip": "a_zApi\\a_zApi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-01T06:17:48.738Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

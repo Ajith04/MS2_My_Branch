@@ -1,0 +1,806 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.offCanvas{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 100vh;
+    background-color: #07C6A3;
+    width: 25%;
+    display: none;
+    color: white;
+}
+
+.topbar{
+    background-color: #007296;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.dashboard{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.logo{
+    height:60px;
+    width: 100px;
+    margin-left: 20px;
+}
+.menu{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: between;
+}
+
+.notify{
+    margin-right: 20px;
+}
+
+.iconPadding{
+    padding: 10px;
+}
+
+.material-symbols-outlined{
+    color: white;
+    cursor: pointer;
+}
+
+h3{    
+    font-family:'Exo', Courier, monospace;
+    font-size: 20px;
+    /* font-weight: 300; */
+    margin-left: 20px;
+    overflow:hidden;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(41, 41, 34);
+    border-right:1px solid rgb(41, 41, 34) ;
+    cursor: pointer;
+    padding: 5px;
+}
+
+ul{
+    border-top: 1px solid rgb(41, 41, 34);
+}
+
+.sm{
+    color: rgb(247, 232, 29);
+    margin-left: 20px;
+}
+
+
+li:hover{
+    border-left: 5px solid black;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+   }
+
+
+.icon{
+    height: 130px;
+    width: 130px;
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+}
+
+.menuTitle{
+    margin-top: 20px;
+}
+
+.ico:hover{
+    transform:rotate(360deg);
+    transition: 1s;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.add{
+    background-color: #80C574;
+}
+
+.edit{
+    background-color: #00D2C6;
+}
+
+.view{
+    background-color: #D99340;
+}
+
+.delete{
+    background-color: #C54D4D;
+}
+
+.modalContainer{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    overflow:scroll;
+    
+}
+
+.addStudentModal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: slide 0.5s;
+    height: 540px;
+    /* width: 380px; */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px  black;
+    border-radius: 15px;
+    
+}
+
+@keyframes slide {
+    from{
+        transform :rotate(180deg)
+    }
+}
+
+.modalCol{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    
+}
+
+label{
+    color: black;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input{
+    width: 200px;
+    height: 28px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(51, 51, 51);
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 6px;
+}
+
+textarea{
+    padding: 6px;
+}
+
+input:hover{
+    border: 1px solid rgb(2, 139, 250);
+}
+
+textarea{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(51, 51, 51);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.toprow{
+    width: 100%;
+    height: 50px;
+    background-color: #007296;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.tab{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.tab1{
+    background-color: White; 
+}
+
+.tab2{
+    background-color: #80C574;
+    color: white;
+}
+
+.tabContainer{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    margin-top: -30px;
+}
+
+.close{
+    display: flex;
+    justify-content: right;
+     margin-right: 15px;
+     font-size: 30px;
+     font-weight: bolder;
+     color: white;
+ }
+
+.closeButton:hover{
+    cursor: pointer;
+    color: rgb(90, 89, 89);
+}
+
+.btnRow{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+/* primary button */
+.primaryBtn{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color:white;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 10px black;
+    border:none;
+    width:100px;
+    border-radius: 10px;
+    background-color: #F4E666;
+    padding: 5px;
+    display: grid;
+    align-items: center;
+    cursor:pointer;
+
+}
+
+/* Secondary-Button */
+.secondaryBtn{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 10px black;
+    border:none;
+    width:100px;
+    border-radius: 10px;
+    background-color: #66E2DB;
+    padding: 5px;
+    display: grid;
+    align-items: center;
+    cursor:pointer;
+    color:white;
+
+}
+
+.primaryBtn:hover{
+    background-color: #faed8b;
+}
+
+.secondaryBtn:hover{
+    background-color:#85f8f2;
+}
+
+.register{
+    display: none;
+    overflow:visible;
+    height: 670px;
+    background-color: white;
+    padding: 5px;
+}
+
+select{
+    width: 200px;
+    height: 30px;
+    border: none;
+    box-shadow: 1px 1px 5px black ;
+    border-radius: 5px;
+}
+
+select:hover{
+    border: 1px solid rgb(2, 139, 250);
+}
+
+.editStudentModal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: slide 0.5s;
+    /* height: 610px; */
+    width: 380px;
+    background-color: #00D2C6;
+    box-shadow: 1px 1px 10px  black;
+    border-radius: 15px;
+}
+
+.editStudentBg{
+    background-color: #00D2C6;
+}
+
+.editTopRow{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    background-color: #007296;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.editHeading{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: -12px;
+    
+}
+
+.editRow{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.editCol{
+    display: flex;
+    justify-content: center;
+}
+.search:hover{
+    color: rgb(90, 89, 89);
+}
+
+.edContainer{
+    display: none;
+}
+
+.editBtnRow{
+    margin-bottom: 20px;
+}
+
+.addCourseBody{
+    background-color: #80C574;
+}
+
+.firstRow{
+    margin-top: 20px;
+}
+
+.deleteStudentBg{
+    background-color: #C54D4D;
+}
+
+.removeDynamic{
+    background-color:rgb(182, 211, 212);
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    margin-bottom: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: none;
+}
+
+.id, .name, .batch{
+    border-right: 1px solid black;
+}
+
+.removeBtn{
+    height: 25px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color:#C54D4D ;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+    color: white;
+    cursor: pointer;
+}
+
+.dashRow{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.dashcol{
+    padding: 20px;
+}
+
+.tableRow{
+    display: flex;
+
+}
+
+.lastStudent, .lastCourse{
+    margin: 30px;
+    padding: 10px;
+    background-color: #007296;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pHead{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+table{
+    border-collapse: collapse;
+    
+}
+
+.paymentTopRow{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    
+}
+
+.searchCol{
+    display: flex;
+    align-items: center;
+}
+
+.paymentSearch{
+    padding: 5px;
+    margin-left: 10px;
+    
+}
+.paymentSearch:hover{
+    transform: scale(120%);
+}
+
+.paymentSearchBtn{
+    background-color: #C54D4D;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: right;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+
+}
+
+.paymentSearchBtn:hover{
+    background-color:#d65757;
+}
+
+.BtnCol{
+    display:flex;
+    justify-content: right;
+
+}
+
+.singleStudentPayment{
+    background-color: #00D2C6;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px black;
+    display: none;
+}
+
+.paymentHistoryLink{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dynamicTable{
+    margin:20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.addPay{
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #04b43f;
+    margin-right: 10px;
+    margin-left: 10PX;
+    box-shadow: 1px 1px 5px black;
+}
+
+.addPay:hover{
+background-color: #04d827;
+}
+
+.tCell{
+    padding: 5px;
+}
+
+.sendRemind{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color:#C54D4D;
+    box-shadow: 1px 1px 5px black;
+
+}
+
+.sendRemind:hover{
+    background-color: #d65757;
+}
+
+.payAmount{
+    background-color: #C54D4D;
+    border-radius: 10px;
+    padding: 5px;
+    color: White;
+}
+.err{
+    background-color: #C54D4D;
+    width: 75%;
+    display: none;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px black;
+    padding: 5px;
+    color: White;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.paymentHistory{
+    background-color: #04b43f;
+    display: flex;
+    text-align: center;
+    display: none;
+    margin-top: 30px;
+}
+
+.historyTH{
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.addModuleBtn{
+    background-color: #04b43f;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 1px 1px 5px black;
+    
+}
+
+.moduleBg{
+    background-color: #00D2C6;
+}
+
+.moduleCaption{
+    background-color: #007296;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+
+.addExpenseBody{
+    background-color: #C54D4D;
+}
+
+.imBtn{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: White;
+    font-size: 16px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.regFee{
+    background-color: #00D2C6;
+}
+
+.regFee:hover{
+    background-color: #04ebdf;
+}
+
+.newBatch{
+    background-color:#04b43f;
+}
+
+.newBatch:hover{
+    background-color: #07da4d;
+}
+
+.addExpense{
+    background-color:#C54D4D;
+}
+
+.addExpense:hover{
+    background-color: #e95d5d;
+}
+
+.bottomRow{
+    margin-top: 30px;
+}
+
+.followupList{
+    background-color: rgb(192, 192, 3);
+    margin-top: 10px;
+}
+
+.followupList:hover{
+    background-color: rgb(202, 202, 2);
+    
+}
+
+.wiseHead{
+    margin-top: 20px;
+}
+
+.regBg{
+    background-color: #00D2C6;
+}
+
+.addBatch{
+    background-color: #04b43f;
+}
+
+.tableContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.moduleTable{
+    margin-top: 50px;
+    width: 80%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.moduleHead{
+    padding: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    border: 1px solid white;
+}
+
+.tableHeading{
+    background-color: #D99340;
+    
+}
+
+.changeableDiv{
+    
+    display: none;
+    
+}
+
+.cOrB{
+    background-color: #04b43f;
+}
+
+.errM{
+    display: none;
+    margin-top: 20px;
+    color: #C54D4D;
+}
+
+.genReport{
+    background-color: rgb(210, 105, 30);
+}
+
+.genReport:hover{
+    background-color: rgb(241, 121, 35);
+}
+
+
+
+.gen{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.message{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.genTHead{
+    padding: 10px;
+    color: white;
+    
+}
+
+#editImage{
+    width: 130px;
+}
+
+
+
+
+
+
+
+
+
+
+
