@@ -32,23 +32,7 @@ namespace a_zApi.Services
         public async Task<List<StudentResponse>> GetAllStudent()
         {
             var data=await _istudentRepository.GetAllStudent();
-
-            var response=new List<StudentResponse>();
-
-            foreach (var student in data)
-            {
-                var res = new StudentResponse();
-               res.NicNo = student.NicNo;
-                res.FirstName=student.FirstName;
-                res.LastName=student.LastName;
-                res.Date=student.Date;
-                res.MobileNo=student.MobileNo;
-                res.Email=student.Email;
-                res.Address=student.Address;
-                response.Add(res);
-            }
-
-            return response;
+            return data;
         }
         public async Task<StudentResponse> GetStudentById(string NicNo)
         {
@@ -60,18 +44,7 @@ namespace a_zApi.Services
             }
             else
             {
-
-           
-            var response = new StudentResponse();
-            response.NicNo=data.NicNo;
-            response.FirstName=data.FirstName;
-            response.LastName=data.LastName;
-            response.Date=data.Date;
-            response.MobileNo=data.MobileNo;
-            response.Email=data.Email;
-            response.Address=data.Address;
-           
-            return response;
+                return data;
             }
         }
         

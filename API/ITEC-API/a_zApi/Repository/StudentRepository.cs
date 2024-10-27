@@ -1,4 +1,5 @@
-﻿using a_zApi.Enitity;
+﻿using a_zApi.DTO.ResponseDto;
+using a_zApi.Enitity;
 using a_zApi.IRepository;
 using Microsoft.Data.SqlClient;
 using System.Numerics;
@@ -33,18 +34,18 @@ namespace a_zApi.Repository
            
         }
 
-        public async Task<List<Student>> GetAllStudent()
+        public async Task<List<StudentResponse>> GetAllStudent()
         {
-            var students = new List<Student>(); 
+            var students = new List<StudentResponse>(); 
             using( var connection=new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("select * from Students",connection);
+                var command = new SqlCommand("select Students.*, Courses.CourseName, Enrollments.Batch from Students left join Enrollments on Students.StudentId = Enrollments.StudentId left join Courses on Enrollments.CourseId = Courses.CourseId;",connection);
                 await connection.OpenAsync();
                 using(var reader=await command.ExecuteReaderAsync())
                 {
                     while (reader.Read())
                     {
-                        students.Add(new Student
+                        students.Add(new StudentResponse
                         {
                             NicNo=reader.GetString(0),
                             FirstName=reader.GetString(1),
@@ -53,6 +54,10 @@ namespace a_zApi.Repository
                             MobileNo=reader.GetString(4),
                             Email=reader.GetString(5),
                             Address=reader.GetString(6),
+                            Intake=reader.GetString(7),
+                            CourseName = reader.GetString(8),
+                            Batch = reader.GetString(9)
+                            
 
                         });
                     }
@@ -60,19 +65,19 @@ namespace a_zApi.Repository
                 return students;
             }
         }
-        public async Task<Student> GetStudentById(string NicNo)
+        public async Task<StudentResponse> GetStudentById(string NicNo)
         {
-            Student student=null;
+            StudentResponse student =null;
             using( var connection=new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("SELECT * FROM Students WHERE StudentId=@NicNo", connection);
-                command.Parameters.AddWithValue("@NicNo", NicNo);
+                var command = new SqlCommand("select Students.*, Courses.CourseName, Enrollments.Batch from Students left join Enrollments on Students.StudentId = Enrollments.StudentId left join Courses on Enrollments.CourseId = Courses.CourseId where Students.StudentId = @studentId;", connection);
+                command.Parameters.AddWithValue("@studentId", NicNo);
                 await connection.OpenAsync();
                 using(var reader = await command.ExecuteReaderAsync())
                 {
                     if(await reader.ReadAsync())
                     {
-                        student = new Student
+                        student = new StudentResponse
                         {
                             NicNo = reader.GetString(0),
                             FirstName = reader.GetString(1),
@@ -80,7 +85,10 @@ namespace a_zApi.Repository
                             Date = reader.GetDateTime(3),
                             MobileNo = reader.GetString(4),
                             Email = reader.GetString(5),
-                            Address = reader.GetString(6)
+                            Address = reader.GetString(6),
+                            Intake = reader.GetString(7),
+                            CourseName = reader.GetString(8),
+                            Batch = reader.GetString(9)
                         };
                         return student;
 

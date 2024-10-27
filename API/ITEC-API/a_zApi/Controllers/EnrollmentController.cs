@@ -1,4 +1,5 @@
 ﻿using a_zApi.DTO.RequestDto;
+using a_zApi.Enitity;
 using a_zApi.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,5 +23,23 @@ namespace a_zApi.Controllers
             await _ienrollmentservice.createEnrollment (enrollmentrequest);
             return Ok();
         }
+
+        [HttpPost ("add-reg-fee")]
+        public async Task<IActionResult> addRegFee(RegFeeRequest regfeerequest)
+        {
+            await _ienrollmentservice.addRegFee (regfeerequest);
+            return Ok();
+        }
+
+        [HttpPost ("add-student-account")]
+        public async Task<IActionResult> createStudentAccount(StudentAccountRequest studentaccountrequest)
+        {
+            await _ienrollmentservice.createStudentAccount (studentaccountrequest);
+            return Ok();
+        }
+
+        
     }
+
+
 }

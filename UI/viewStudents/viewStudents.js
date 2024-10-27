@@ -8,9 +8,9 @@ async function getAllStudents(){
     let reversed = allStudents.reverse();
 
     let tbody = document.getElementById("tbody");
-// ...........................................................................
-// Student Table
-// Creating table rows and table data using data from db.json/students
+    // ...........................................................................
+    // Student Table
+    // Creating table rows and table data using data from db.json/students
     reversed.forEach(e => {
         let row = document.createElement('tr');
         row.style.backgroundColor = "#80C574"
@@ -27,22 +27,27 @@ async function getAllStudents(){
         fnamecell.textContent = e.firstName;
         row.appendChild(fnamecell);
 
-        let batchcell = document.createElement('td');
-        batchcell.style.padding = "20px";
-        batchcell.style.textAlign = "center";
-        batchcell.textContent = '';
-        row.appendChild(batchcell);
-
         let coursecell = document.createElement('td');
         coursecell.style.padding = "20px";
         coursecell.style.textAlign = "center";
-        coursecell.textContent = '';
+        coursecell.textContent = e.courseName;
         row.appendChild(coursecell);
+
+        let batchcell = document.createElement('td');
+        batchcell.style.padding = "20px";
+        batchcell.style.textAlign = "center";
+        batchcell.textContent = e.batch;
+        row.appendChild(batchcell);
 
         let dateofjoincell = document.createElement('td');
         dateofjoincell.style.padding = "20px";
         dateofjoincell.style.textAlign = "center";
-        dateofjoincell.textContent = e.date;
+        const date = new Date(e.date);
+        let day = date.getDay();
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let month = months[date.getMonth()];
+        let year = date.getFullYear();
+        dateofjoincell.textContent = `${day}.${month}.${year}`;
         row.appendChild(dateofjoincell);
 
         let mobilecell = document.createElement('td');
@@ -62,6 +67,12 @@ async function getAllStudents(){
         addresscell.style.textAlign = "center";
         addresscell.textContent = e.address;
         row.appendChild(addresscell);
+
+        let intakeCell = document.createElement('td');
+        intakeCell.style.padding = "20px";
+        intakeCell.style.textAlign = "center";
+        intakeCell.textContent = e.intake;
+        row.appendChild(intakeCell);
 
         
 

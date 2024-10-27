@@ -202,6 +202,35 @@ export async function createEnrollment(obj){
 }
 
 
+export async function getCourseBatch(studentId) {
+  const response = await fetch(`http://localhost:5064/api/Enrollment/get-course-batch?studentId=${studentId}`);
+  const data = await response.json();
+  return data;
+}
+
+export async function addRegFee(obj){
+  await fetch('http://localhost:5064/api/Enrollment/add-reg-fee',{
+    method:'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({"StudentId":obj.studentId, "RegistrationFee":obj.fee})
+  })
+  
+}
+
+export async function addStudentAccount(obj){
+  await fetch('http://localhost:5064/api/Enrollment/add-student-account',{
+    method:'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({"StudentId":obj.studentId, "Password":obj.Password})
+  })
+  
+}
+
+
+
+
+
+
 
 
 

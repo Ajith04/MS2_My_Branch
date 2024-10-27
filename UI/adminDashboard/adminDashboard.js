@@ -1,4 +1,4 @@
-import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, addPayment, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense, getCourseIDFee, createEnrollment} from '../api.js';
+import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, addPayment, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense, getCourseIDFee, createEnrollment, addRegFee, addStudentAccount} from '../api.js';
 
 
 
@@ -380,7 +380,18 @@ reversedBatch.forEach(e => {
 // let stuRegFee = document.getElementById("stuRegFee");
 // stuRegFee.value = finalRegFee;
 
+function generatePassword(length) {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    }
+    return password;
+}
 
+let stuRegFee = document.getElementById("stuRegFee");
+stuRegFee.value = parseInt('1500');
 
 document.getElementById("register").addEventListener('submit', async function(event){
     event.preventDefault();
@@ -415,7 +426,16 @@ document.getElementById("register").addEventListener('submit', async function(ev
     let newEnrollment = {studentId:stuId, courseId:courseIdFee.courseId, enrollDate:stuDate, courseFee:courseIdFee.fee, batch:stuBatch};
 
     await createEnrollment(newEnrollment);
-    // let stuRegFee = document.getElementById("stuRegFee").value;
+    let stuRegFee = document.getElementById("stuRegFee").value;
+
+    let regFee = {studentId:stuId, fee:stuRegFee};
+    await addRegFee(regFee);
+
+    let password = await generatePassword(12);
+
+    let studentAccount = {studentId:stuId, Password:password}
+    await addStudentAccount(studentAccount);
+
     let stuAddiFee = document.getElementById("stuAddiFee").value;
 
 
@@ -423,7 +443,7 @@ document.getElementById("register").addEventListener('submit', async function(ev
     alert("Successfully added as new student");
 
     let a = document.createElement('a');
-    a.href = `mailto:${stuEmail}?subject=WelCome to ITEC&body=Hi ${stuFName}, Congratulations... %0A%0AYou just have registered in ITEC on ${stuDate} to follow the course ${selectCourse}. Please find the link below of our student portal. You can signup with your N.I.C No ${stuId} you used for your course registration. Thank you.%0A%0A%0A The Student portal link - https://www.itecstudentportal.com`;
+    a.href = `mailto:${stuEmail}?subject=WelCome to ITEC&body=Hi ${stuFName}, Congratulations... %0A%0AYou just have registered in ITEC on ${stuDate} to follow the course ${selectCourse}. Please find the link below of our student portal. You can signup with your N.I.C No ${stuId} you used for your course registration and the password is ${password}. You can change your password later. Thank you.%0A%0A%0A The Student portal link - https://www.itecstudentportal.com`;
     a.click();
     event.target.reset();
        
@@ -465,8 +485,8 @@ search.onclick = async function(){
     document.getElementById("seId").value = singleStudent.nicNo;
     document.getElementById("seFname").value = singleStudent.firstName;
     document.getElementById("seLname").value = singleStudent.lastName;
-    document.getElementById("seCourse").value = '';
-    document.getElementById("seBatch").value = '';
+    document.getElementById("seCourse").value = singleStudent.courseName;
+    document.getElementById("seBatch").value = singleStudent.batch;
     document.getElementById("seMobile").value = singleStudent.mobileNo;
     document.getElementById("seEmail").value = singleStudent.email;
     document.getElementById("seAddress").value = singleStudent.address;
@@ -852,7 +872,7 @@ async function displayLastStudents(){
 
         let courseCell = document.createElement('td');
         courseCell.style.padding = "3px";
-        courseCell.textContent = e.courseId;
+        courseCell.textContent = e.courseName;
         row.appendChild(courseCell);
 
         let dateCell = document.createElement('td');
@@ -862,7 +882,7 @@ async function displayLastStudents(){
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         const month = monthNames[date.getMonth()];
         const year = date.getFullYear();
-        const finalDate = `${day}-${month}-${year}`
+        const finalDate = `${day}.${month}.${year}`
         dateCell.textContent = finalDate;
         row.appendChild(dateCell);
 

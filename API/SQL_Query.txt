@@ -68,6 +68,58 @@ foreign key (CourseId) references Courses (CourseId)
 );
 
 
+insert into Enrollments values
+('903090979V', 'ITEC_001', '2024-01-01', 1500, 'Week-end'),
+('123456789V', 'ITEC_002', '2024-12-05', 1500, 'Weekday'),
+('159357258V', 'ITEC_003', '2024-02-10', 5000, 'Week-end'),
+('246813579V', 'ITEC_004', '2024-01-25', 3000, 'Week-end'),
+('275194386V', 'ITEC_005', '2024-08-06', 1500, 'Weekday'),
+('753159852V', 'ITEC_006', '2024-03-12', 6000, 'Morning'),
+('756184276V', 'ITEC_007', '2024-03-08', 8000, 'Morning'),
+('894356157V', 'ITEC_008', '2024-04-11', 5000, 'Evening'),
+('942357685V', 'ITEC_009', '2024-10-07', 6000, 'Evening'),
+('987654321V', 'ITEC_010', '2024-10-04', 12000, 'Evening');
+
+
+
+create table RegistrationFee(
+StudentId nvarchar (20) primary key,
+RegistrationFee int
+
+foreign key (StudentId) references Students (StudentId)
+);
+
+insert into RegistrationFee values
+('123456789V', 1500),
+('159357258V', 1500),
+('246813579V', 1500),
+('275194386V', 1500),
+('753159852V', 1500),
+('756184276V', 1500),
+('894356157V', 1500),
+('903090979V', 1500),
+('942357685V', 1500),
+('987654321V', 1500);
+
+
+create table UserAccounts(
+StudentId nvarchar (20) primary key,
+[Password] nvarchar (20)
+
+foreign key (StudentId) references Students (StudentId)
+);
+
+insert into UserAccounts values
+('123456789V', '123456789'),
+('159357258V', '987654321'),
+('246813579V', '248769512'),
+('275194386V', '247859467'),
+('753159852V', '015798452'),
+('756184276V', '555233772'),
+('894356157V', '727587272'),
+('903090979V', '877527522'),
+('942357685V', '275272788'),
+('987654321V', '897783833');
 
 
 
