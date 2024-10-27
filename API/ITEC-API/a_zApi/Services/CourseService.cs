@@ -55,15 +55,24 @@ namespace a_zApi.Services
         public async Task<CourseResponse> GetCourseById(string CourseId)
         {
             var data = await _icourseRepository.GetCourseById(CourseId);
-            var response=new CourseResponse();
-            response.CourseId = data.CourseId;
-            response.CourseName =data.CourseName;
-            response.CourseImage = data.CourseImage;
-            response.Duration =data.Duration;
-            response.Fee=data.Fee;
-            response.Instructor=data.Instructor;
-            response.Syllabus=data.Syllabus;
-            return response;
+
+            if (data == null)
+            {
+                return null;
+            }
+            else
+            {
+                var response = new CourseResponse();
+                response.CourseId = data.CourseId;
+                response.CourseName = data.CourseName;
+                response.CourseImage = data.CourseImage;
+                response.Duration = data.Duration;
+                response.Fee = data.Fee;
+                response.Instructor = data.Instructor;
+                response.Syllabus = data.Syllabus;
+                return response;
+            }
+            
         }
         
         public async Task UpdateCourse(string CourseId, CourseRequest courseRequest)
@@ -94,6 +103,13 @@ namespace a_zApi.Services
             await _icourseRepository.DeleteCourseById(CourseId);
 
 
+        }
+
+        public async Task<CourseIdFeeResponse> getCourseIdFee(string courseName)
+        {
+            var course = await _icourseRepository.getCourseIdFee(courseName);
+
+            return course;
         }
     }
 }

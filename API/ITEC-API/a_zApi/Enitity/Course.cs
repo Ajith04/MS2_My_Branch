@@ -1,7 +1,10 @@
-﻿namespace a_zApi.Enitity
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace a_zApi.Enitity
 {
     public class Course
     {
+        [Key]
         public string CourseId { get; set; }
         public string CourseName { get; set; }
         public byte[] CourseImage { get; set; }

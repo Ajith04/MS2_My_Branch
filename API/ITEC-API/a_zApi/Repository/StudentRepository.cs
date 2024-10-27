@@ -17,7 +17,7 @@ namespace a_zApi.Repository
         {
             using(var connection=new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("INSERT INTO Students(StudentId,FirstName,LastName,JoinDate,Mobile,Email,Address)VALUES(@NicNo,@FirstName,@LastName,@Date,@MobileNo,@Email,@Address)", connection);
+                var command = new SqlCommand("INSERT INTO Students(StudentId,FirstName,LastName,JoinDate,Mobile,Email,Address,Intake)VALUES(@NicNo,@FirstName,@LastName,@Date,@MobileNo,@Email,@Address,@Intake)", connection);
                 command.Parameters.AddWithValue("@NicNo", student.NicNo);
                 command.Parameters.AddWithValue("@FirstName",student.FirstName);
                 command.Parameters.AddWithValue("@LastName",student.LastName);
@@ -25,6 +25,7 @@ namespace a_zApi.Repository
                 command.Parameters.AddWithValue("@MobileNo", student.MobileNo);
                 command.Parameters.AddWithValue("@Email", student.Email);
                 command.Parameters.AddWithValue("@Address",student.Address);
+                command.Parameters.AddWithValue("@Intake", student.Intake);
 
                 await connection.OpenAsync();
                 await command.ExecuteNonQueryAsync();
@@ -81,10 +82,15 @@ namespace a_zApi.Repository
                             Email = reader.GetString(5),
                             Address = reader.GetString(6)
                         };
+                        return student;
 
                     }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                return student;
+                
             }
         }
         
@@ -119,8 +125,7 @@ namespace a_zApi.Repository
                     deleteCommand.Parameters.AddWithValue("@NicNo", NicNo);
                     await connection.OpenAsync();
                     await deleteCommand.ExecuteNonQueryAsync();
-                
-
+            
             }
             
         }

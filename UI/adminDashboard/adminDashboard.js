@@ -1,4 +1,4 @@
-import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, addPayment, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense} from '../api.js';
+import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, addPayment, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense, getCourseIDFee, createEnrollment} from '../api.js';
 
 
 
@@ -386,13 +386,11 @@ document.getElementById("register").addEventListener('submit', async function(ev
     event.preventDefault();
 
     let stuId = document.getElementById("stuId").value;
-    // var singleStudent = await getStudentById(stuId);
+    var singleStudent = await getStudentById(stuId);    
     
-    // if(singleStudent != null){
-    //     alert("The Student ID is already exists");
-    
-    // }
-    // else{
+    if(singleStudent === null){
+
+        let intake = "On Premise";
         
     let stuFName = document.getElementById("stuFName").value;
     let stuLName = document.getElementById("stuLName").value;
@@ -402,15 +400,25 @@ document.getElementById("register").addEventListener('submit', async function(ev
     let stuAddress = document.getElementById("stuAddress").value;  
    
 
-    let studentObject = {nicNo:stuId, firstName:stuFName, lastName:stuLName, date:stuDate, mobileNo:stuMobile, email:stuEmail, address:stuAddress};
+    let studentObject = {nicNo:stuId, firstName:stuFName, lastName:stuLName, date:stuDate, mobileNo:stuMobile, email:stuEmail, address:stuAddress, Intake:intake};
 
     
     await addNewStudent(studentObject);
 
+    
+    let selectCourse = document.getElementById("selectCourse").value;
 
-    // let selectCourse = document.getElementById("selectCourse").value;
-    // let stuBatch = document.getElementById("stuBatch").value;
-    // let stuAddiFee = document.getElementById("stuAddiFee").value;
+    let courseIdFee = await getCourseIDFee(selectCourse);
+
+    let stuBatch = document.getElementById("stuBatch").value;
+
+    let newEnrollment = {studentId:stuId, courseId:courseIdFee.courseId, enrollDate:stuDate, courseFee:courseIdFee.fee, batch:stuBatch};
+
+    await createEnrollment(newEnrollment);
+    // let stuRegFee = document.getElementById("stuRegFee").value;
+    let stuAddiFee = document.getElementById("stuAddiFee").value;
+
+
 
     alert("Successfully added as new student");
 
@@ -418,7 +426,13 @@ document.getElementById("register").addEventListener('submit', async function(ev
     a.href = `mailto:${stuEmail}?subject=WelCome to ITEC&body=Hi ${stuFName}, Congratulations... %0A%0AYou just have registered in ITEC on ${stuDate} to follow the course ${selectCourse}. Please find the link below of our student portal. You can signup with your N.I.C No ${stuId} you used for your course registration. Thank you.%0A%0A%0A The Student portal link - https://www.itecstudentportal.com`;
     a.click();
     event.target.reset();
-    // }
+       
+    
+    }
+    else{
+
+        alert("The Student ID is already exists");
+    }
 });
 
 // ........................................................
@@ -475,7 +489,6 @@ let studentEdit = document.getElementById("studentEdit");
 studentEdit.onclick = function(){
 seFname.disabled = false;
 seLname.disabled = false;
-seCourse.disabled = false;
 seBatch.disabled = false;
 seMobile.disabled = false;
 seEmail.disabled = false;
@@ -594,12 +607,12 @@ addCourseCancel.onclick = function(){
 // Add Course Function
 document.getElementById("addCourseForm").addEventListener('submit', async function(event){
     event.preventDefault();
-    let courseList = await getCourses();
-    let addCourseId = document.getElementById("addCourseId").value;
 
-    if(await courseList.find(e => e.id === addCourseId)){
-        alert("The course ID is already exists");
-    }else{
+    let addCourseId = document.getElementById("addCourseId").value;
+    let singleCourse = await getSingleCourse(addCourseId);
+    
+
+    if(singleCourse === null){
 
     let addCourseName = document.getElementById("addCourseName").value;
     let addFile = document.getElementById("addFile").files[0];
@@ -621,6 +634,11 @@ document.getElementById("addCourseForm").addEventListener('submit', async functi
     await addNewCourse(courseDetails);
     event.target.reset();
     alert("Successfully added");
+        
+    }else{
+
+    alert("The course ID is already exists");
+    
     }
 });
 
@@ -839,7 +857,13 @@ async function displayLastStudents(){
 
         let dateCell = document.createElement('td');
         dateCell.style.padding = "3px";
-        dateCell.textContent = e.date;
+        const date = new Date(e.date);
+        const day = date.getDate();
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const month = monthNames[date.getMonth()];
+        const year = date.getFullYear();
+        const finalDate = `${day}-${month}-${year}`
+        dateCell.textContent = finalDate;
         row.appendChild(dateCell);
 
         lastStudents.appendChild(row);
@@ -1549,3 +1573,5 @@ document.getElementById("report").onclick = async function(){
 document.getElementById("reportClose").onclick = function(){
     reportModal.style.display = "none";
 }
+
+

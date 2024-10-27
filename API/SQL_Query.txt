@@ -1,0 +1,74 @@
+create database ITECDB;
+
+use ITECDB;
+
+create table [Admin] (
+UserName nvarchar (20),
+[Password] nvarchar (20)
+);
+
+insert into [Admin] values ('admin', '123');
+
+create table Students(
+StudentId nvarchar (20) primary key,
+FirstName nvarchar (50),
+LastName nvarchar (50),
+JoinDate date,
+Mobile nvarchar (20),
+Email nvarchar (100),
+[Address] nvarchar (100),
+Intake nvarchar (20)
+);
+
+insert into Students values
+('903090979V', 'Ajith', 'Sritharan', '01-01-2024', '0755255050', 'sritharanajith04@gmail.com', 'new road, Vaddu-west, Vaddukoddai, jaffna', 'On Premise' ),
+('123456789V', 'Thayuran', 'Sinnathampy', '12-05-2024', '0123456789', 'sample@gmail.com', 'Kilinochchi', 'Digital' ),
+('987654321V', 'Nirojan', 'Periyathampy', '10-04-2024', '0258741362', '123@gmail.com', 'Vavuniya', 'On Premise' ),
+('246813579V', 'Narthanan', 'Maniyam', '01-25-2024', '0275961548', '456@gmail.com', 'Colombo', 'On Premise' ),
+('159357258V', 'Aruran', 'Shanmugam', '02-10-2024', '0235196741', '789@gmail.com', 'Nuwara-eliya', 'Digital' ),
+('753159852V', 'Kajitha', 'bladu ravi', '03-12-2024', '0567498231', 'qwerty@gmail.com', 'Ampara', 'Digital' ),
+('942357685V', 'Safeek', 'paan parak vaasu', '10-07-2024', '0598167234', 'asdf@gmail.com', 'Mullaitivu', 'On Premise' ),
+('894356157V', 'Imthath', 'saara paambu', '04-11-2024', '0647129534', 'devorak@gmail.com', 'Mannar', 'On Premise' ),
+('275194386V', 'Thuvakaran', 'kathi kathiresan', '08-06-2024', '0516972405', 'peru-illa-boss@gmail.com', 'Batticaloa', 'Digital' ),
+('756184276V', 'Jathusan', 'walter vetrivel', '03-08-2024', '0531920475', 'jarachum-mail-id-kudunka@gmail.com', 'Anuradahpura', 'On Premise' );
+
+create table Courses(
+CourseId nvarchar (20) primary key,
+CourseName nvarchar (20),
+CourseImage varbinary (max),
+Duration nvarchar (20),
+Fee int,
+Instructor nvarchar (20),
+Syllabus nvarchar (255)
+);
+
+insert into Courses values
+('ITEC_001', 'HTML', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/html.png', SINGLE_BLOB) AS ImageFile),'01 Month', '1500', 'Mr.Jerobert', 'Complete HTML'),
+('ITEC_002', 'CSS', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/css.png', SINGLE_BLOB) AS ImageFile),'1.5 Month', '1500', 'Dr.Neil', 'Grid & Flex, Animations'),
+('ITEC_003', 'JavaScript', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/js.png', SINGLE_BLOB) AS ImageFile),'03 Months', '5000', 'Mr.Shantha', 'DOM'),
+('ITEC_004', 'Bootstrap', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/bootstrap.png', SINGLE_BLOB) AS ImageFile),'01 Month', '3000', 'Mr.Mayooran', 'Framework'),
+('ITEC_005', 'Git & Github', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/git.png', SINGLE_BLOB) AS ImageFile),'01 Month', '1500', 'Mr.Aaruran', 'Version Control'),
+('ITEC_006', 'C#', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/c.png', SINGLE_BLOB) AS ImageFile),'06 Months', '6000', 'Mr.Ajith', 'OOP'),
+('ITEC_007', 'API', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/api.png', SINGLE_BLOB) AS ImageFile),'03 Months', '8000', 'Mr.Thayuran', 'Application Programming Interface'),
+('ITEC_008', 'MS SQL', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/sql.png', SINGLE_BLOB) AS ImageFile),'02 Months', '5000', 'Mr.Nirojan', 'Microsoft Sturctured Query Language'),
+('ITEC_009', 'Angular', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/angular.png', SINGLE_BLOB) AS ImageFile),'03 Months', '6000', 'Mr.Thuvaragan', 'JavaScript Framework'),
+('ITEC_010', 'Java', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/java.png', SINGLE_BLOB) AS ImageFile),'06 Months', '12000', 'Mr.Jerobert', 'Advanced Programming');
+
+
+create table Enrollments (
+EnrollmentId int identity(1,1) primary key,
+StudentId nvarchar (20),
+CourseId nvarchar (20),
+EnrollmentDate date,
+CourseFee int,
+Batch nvarchar (20)
+
+foreign key (StudentId) references Students (StudentId),
+foreign key (CourseId) references Courses (CourseId)
+);
+
+
+
+
+
+

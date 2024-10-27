@@ -10,6 +10,8 @@ namespace a_zApi.IServices
         Task<CourseResponse> GetCourseById(string CourseId);
         Task UpdateCourse(string CourseId, CourseRequest courseRequest);
         Task DeleteCourseById(string CourseId);
-        
+        Task<CourseIdFeeResponse> getCourseIdFee(string courseName);
+
+
     }
 }

@@ -55,6 +55,13 @@ namespace a_zApi.Controllers
             await _icourseService.DeleteCourseById(CourseId);
             return Ok();
         }
+
+        [HttpGet ("get-course-id-fee")]
+        public async Task<IActionResult> getCourseIdFee(string courseName)
+        {
+            var course = await _icourseService.getCourseIdFee(courseName);
+            return Ok(course);
+        }
     }
     
 }

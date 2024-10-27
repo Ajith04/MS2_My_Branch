@@ -2109,11 +2109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Computer Corner\\Desktop\\2nd_Milestone\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\a_zApi.csproj",
+      "projectUniqueName": "E:\\MS2-Final\\MS2_My_Branch\\API\\ITEC-API\\a_zApi\\a_zApi.csproj",
       "projectName": "a_zApi",
-      "projectPath": "C:\\Users\\Computer Corner\\Desktop\\2nd_Milestone\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\a_zApi.csproj",
+      "projectPath": "E:\\MS2-Final\\MS2_My_Branch\\API\\ITEC-API\\a_zApi\\a_zApi.csproj",
       "packagesPath": "C:\\Users\\Computer Corner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Computer Corner\\Desktop\\2nd_Milestone\\ITEC-Institute\\API\\ITEC-API\\a_zApi\\obj\\",
+      "outputPath": "E:\\MS2-Final\\MS2_My_Branch\\API\\ITEC-API\\a_zApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Computer Corner\\AppData\\Roaming\\NuGet\\NuGet.Config",

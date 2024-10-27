@@ -1,4 +1,5 @@
-﻿using a_zApi.Enitity;
+﻿using a_zApi.DTO.ResponseDto;
+using a_zApi.Enitity;
 using a_zApi.IRepository;
 using Microsoft.Data.SqlClient;
 using System.Data;
@@ -83,10 +84,16 @@ namespace a_zApi.Repository
                             Syllabus = reader.GetString(6)
                         };
 
+                        return course;
+
 
                     }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                return course;
+                
             }
         }
        
@@ -127,6 +134,35 @@ namespace a_zApi.Repository
                 await deleteCommand.ExecuteNonQueryAsync();
             }
 
+        }
+
+        public async Task<CourseIdFeeResponse> getCourseIdFee(string courseName)
+        {
+            CourseIdFeeResponse courseIdFeeResponse;
+            string query = "select CourseId, Fee from Courses where CourseName = @courseName";
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@courseName", courseName);
+                    await connection.OpenAsync();
+                    
+                    using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            courseIdFeeResponse = new CourseIdFeeResponse()
+                            {
+                                CourseId = reader.GetString(0),
+                                Fee = reader.GetInt32(1)
+                            };
+                            return courseIdFeeResponse;
+                        }
+                        return null;
+                    }
+                }
+            }
         }
 
     }

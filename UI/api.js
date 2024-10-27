@@ -1,15 +1,14 @@
 export async function getAdmin() {
-    const response = await fetch('http://localhost:3000/admin');
+    const response = await fetch('http://localhost:5064/api/Admin/get-admin');
     const data = await response.json();
     return data;
   }
 
 
   export async function editAdmin(newPassword){
-    await fetch('http://localhost:3000/admin/1', {
+    await fetch(`http://localhost:5064/api/Admin/edit-admin?newpassword=${newPassword}`, {
     method: 'PATCH',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ password: newPassword })
+    headers: {'Content-Type': 'application/json'}
   })      
 }
 
@@ -25,9 +24,14 @@ export async function addStudents(obj){
 
 export async function getStudentById(id) {
   const response = await fetch(`http://localhost:5064/api/Student/Get_Student_By_Id?NicNo=${id}`);
-  const data = await response.json();
-  return data;
+  const text = await response.text();
+  if (!text) {
+    return null; 
+  }
+  const data = JSON.parse(text);
+  return data; 
 }
+
 
 export async function updateStudent(putId, obj) {
   await fetch(`http://localhost:5064/api/Student/Update_Student?NicNo=${putId}`, {
@@ -67,14 +71,17 @@ export async function addNewStudent(obj){
   await fetch('http://localhost:5064/api/Student/Create_Student',{
     method:'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({nicNo:obj.nicNo, firstName:obj.firstName, lastName:obj.lastName, date:obj.date, mobileNo:obj.mobileNo, email:obj.email, address:obj.address})
+    body: JSON.stringify({NicNo:obj.nicNo, FirstName:obj.firstName, LastName:obj.lastName, Date:obj.date, MobileNo:obj.mobileNo, Email:obj.email, Address:obj.address, Intake:obj.Intake})
   })
 }
 
-
 export async function getSingleCourse(courseId) {
   const response = await fetch(`http://localhost:5064/api/Course/Get_Course_By_Id?CourseId=${courseId}`);
-  const data = await response.json();
+  const text = await response.text();
+  if(!text){
+    return null;
+  }
+  const data = JSON.parse(text);
   return data;
 }
 
@@ -178,5 +185,27 @@ export async function getExpense() {
   const data = await response.json();
   return data;
 }
+
+export async function getCourseIDFee(courseName) {
+  const response = await fetch(`http://localhost:5064/api/Course/get-course-id-fee?courseName=${courseName}`);
+  const data = await response.json();
+  return data;
+}
+
+export async function createEnrollment(obj){
+  await fetch('http://localhost:5064/api/Enrollment/add-new-enrollment',{
+    method:'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({"StudentId":obj.studentId, "CourseId":obj.courseId, "EnrollmentDate":obj.enrollDate, "Fee":obj.courseFee, "Batch":obj.batch})
+  })
+  
+}
+
+
+
+
+
+
+
 
 

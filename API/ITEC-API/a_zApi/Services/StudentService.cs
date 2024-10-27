@@ -23,6 +23,7 @@ namespace a_zApi.Services
             inputStudent.MobileNo = studentRequest.MobileNo;
             inputStudent.Email = studentRequest.Email;
             inputStudent.Address = studentRequest.Address;
+            inputStudent.Intake = studentRequest.Intake;
 
             await _istudentRepository.CreateStudent(inputStudent);
            
@@ -53,6 +54,14 @@ namespace a_zApi.Services
         {
             var data = await _istudentRepository.GetStudentById(NicNo);
 
+            if(data == null)
+            {
+                return null;
+            }
+            else
+            {
+
+           
             var response = new StudentResponse();
             response.NicNo=data.NicNo;
             response.FirstName=data.FirstName;
@@ -63,7 +72,7 @@ namespace a_zApi.Services
             response.Address=data.Address;
            
             return response;
-
+            }
         }
         
         public async Task UpdateStudent(string NicNo, StudentUpdateRequest studentRequest)

@@ -13,7 +13,7 @@ async function adminLogin() {
             let username = document.getElementById("username").value;
             let loginPassword = document.getElementById("loginPassword").value;
 
-          if(await admin.find(e => e.username === username) && await admin.find(e => e.password === loginPassword)){
+          if(await admin.userName === username && await admin.password === loginPassword){
               window.location.href = "../adminDashboard/adminDashboard.html";
           }
           else{
@@ -34,7 +34,7 @@ async function adminLogin() {
         
 
         if (newPassword === confirmPassword){
-            if(await admin.find(e => e.password === oldPassword)){
+            if(await admin.password === oldPassword){
                 document.getElementById("changePasswordError").innerText = "";
                 await editAdmin(newPassword);
                 alert("Admin Password Successfully changed!");
