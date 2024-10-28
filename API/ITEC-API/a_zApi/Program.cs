@@ -22,6 +22,10 @@ builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddSingleton<IEnrollmentRepo>(provider => new EnrollmentRepo(connectionString));
 builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
 
+builder.Services.AddSingleton<IPaymentRepo>(provider => new PaymentRepo(connectionString));
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+
+
 
 
 

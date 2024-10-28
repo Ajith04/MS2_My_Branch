@@ -100,16 +100,6 @@ export async function deleteSingleCourse(courseId) {
   });
 }
 
-
-export async function addPayment(obj){
-  await fetch('http://localhost:3000/payments',{
-    method:'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({"id":obj.studentId, "date":obj.studentDate, "fee":obj.studentAddiFee})
-  })
-  
-}
-
 export async function getPayment() {
   const response = await fetch('http://localhost:3000/payments');
   const data = await response.json();
@@ -225,6 +215,26 @@ export async function addStudentAccount(obj){
   })
   
 }
+
+
+export async function addPayment(obj){
+  await fetch('http://localhost:5064/api/Payment/add-payment',{
+    method:'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({"StudentId":obj.studentId, "Fee":obj.payment, "Date":obj.date})
+  })
+  
+}
+
+
+export async function getDueAmount(studentId) {
+  const response = await fetch(`http://localhost:5064/api/Payment/get-payment-details?studentId=${studentId}`);
+  const data = await response.json();
+  return data;
+}
+
+
+
 
 
 

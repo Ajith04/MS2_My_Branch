@@ -124,3 +124,26 @@ insert into UserAccounts values
 
 
 
+create table Payment(
+PaymentId int identity(1,1) primary key,
+StudentId nvarchar (20),
+Payment int,
+[Date] date
+
+foreign key (StudentId) references Students (StudentId)
+);
+
+insert into Payment values
+('123456789V', 1000, '2024-12-05'),
+('159357258V', 1000, '2024-02-10'),
+('246813579V', 1000, '2024-01-25'),
+('275194386V', 1000, '2024-08-06'),
+('753159852V', 1000, '2024-03-12'),
+('756184276V', 1000, '2024-03-08'),
+('894356157V', 1000, '2024-04-11'),
+('903090979V', 1000, '2024-10-27'),
+('942357685V', 1000, '2024-10-07'),
+('987654321V', 1000, '2024-10-04');
+
+
+

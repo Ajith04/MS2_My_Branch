@@ -1,4 +1,4 @@
-import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, addPayment, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense, getCourseIDFee, createEnrollment, addRegFee, addStudentAccount} from '../api.js';
+import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense, getCourseIDFee, createEnrollment, addRegFee, addStudentAccount, addPayment, getDueAmount} from '../api.js';
 
 
 
@@ -437,6 +437,9 @@ document.getElementById("register").addEventListener('submit', async function(ev
     await addStudentAccount(studentAccount);
 
     let stuAddiFee = document.getElementById("stuAddiFee").value;
+    
+    let initialPayment = {studentId:stuId, payment:stuAddiFee, date:stuDate}
+    await addPayment(initialPayment);
 
 
 
@@ -941,38 +944,21 @@ displayLastCourses();
 
 document.getElementById("paymentSearchBtn").onclick = async function(){
     let paymentSearchInput = document.getElementById("paymentSearchInput").value;
-    const paymentAllStudents = await getStudents();
+    const singleStudent = await getStudentById(paymentSearchInput);
 
-    if (await paymentAllStudents.find(e => e.id === paymentSearchInput)){
+    if (singleStudent!= null){
         err.style.display = "none";
         historyErr.style.display = "none";
-        let singleStudent = await paymentAllStudents.find(e => e.id === paymentSearchInput)
-        let paymentCourseName = singleStudent.course;
-
-        const allCourses = await getCourses();
-        let singleCourse = await allCourses.find(e => e.courseName === paymentCourseName);
-        let courseFee = singleCourse.fees;
         
-        
-        const allPayments = await getPayment();
-        
-        let oldPayments = 0;
-        await allPayments.forEach(e => {
-            if(e.id === paymentSearchInput){
-                oldPayments += parseInt(e.fee);
-            }
-        });
-
-        let payableAmount = courseFee - oldPayments;
-
+        let paymentDetails = await getDueAmount(paymentSearchInput);
 
         let payDiv = document.getElementById("payDiv");
         payDiv.style.display = "block";
 
-        document.getElementById("idCell").textContent = singleStudent.id;
-        document.getElementById("nameCell").textContent = singleStudent.firstname;
-        document.getElementById("mobileCell").textContent = singleStudent.mobile;
-        document.getElementById("payableCell").textContent = payableAmount;
+        document.getElementById("idCell").textContent = paymentDetails.studentId;
+        document.getElementById("nameCell").textContent = paymentDetails.firstName;
+        document.getElementById("mobileCell").textContent = paymentDetails.mobile;
+        document.getElementById("payableCell").textContent = paymentDetails.dueAmount;
 
         
     }else{
