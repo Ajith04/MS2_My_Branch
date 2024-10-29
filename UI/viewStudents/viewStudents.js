@@ -43,7 +43,7 @@ async function getAllStudents(){
         dateofjoincell.style.padding = "20px";
         dateofjoincell.style.textAlign = "center";
         const date = new Date(e.date);
-        let day = date.getDay();
+        let day = date.getDate();
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let month = months[date.getMonth()];
         let year = date.getFullYear();

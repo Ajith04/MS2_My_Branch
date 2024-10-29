@@ -1,4 +1,5 @@
 ﻿using a_zApi.DTO.RequestDto;
+using a_zApi.DTO.ResponseDto;
 using a_zApi.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,5 +30,13 @@ namespace a_zApi.Controllers
             var data = await _ipaymentservice.getPayment (studentId);
             return Ok(data);
         }
+
+        [HttpGet ("get-all-payments-by-Id")]
+        public async Task<IActionResult> getAllPaymentsById(string studentId)
+        {
+            var data = await _ipaymentservice.getAllPaymentsById (studentId);
+            return Ok(data);
+        }
+
     }
 }

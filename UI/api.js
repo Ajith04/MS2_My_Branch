@@ -100,10 +100,15 @@ export async function deleteSingleCourse(courseId) {
   });
 }
 
-export async function getPayment() {
-  const response = await fetch('http://localhost:3000/payments');
-  const data = await response.json();
+export async function getPayment(studentId) {
+  const response = await fetch(`http://localhost:5064/api/Payment/get-all-payments-by-Id?studentId=${studentId}`);
+  const text = await response.text();
+  if(!text){
+    return null;
+  }
+  const data = JSON.parse(text);
   return data;
+  
 }
 
 

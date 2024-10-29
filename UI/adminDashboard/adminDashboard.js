@@ -981,7 +981,7 @@ document.getElementById("payDiv").addEventListener('submit', async function(even
     let singlePayment = document.getElementById("singlePayment").value;
     let paymentDate = document.getElementById("paymentDate").value;
 
-    let paymentObj = {studentId:paymentSearchInput, studentDate:paymentDate, studentAddiFee:singlePayment};
+    let paymentObj = {studentId:paymentSearchInput, payment:singlePayment, date:paymentDate};
 
     await addPayment(paymentObj);
 
@@ -991,36 +991,33 @@ document.getElementById("payDiv").addEventListener('submit', async function(even
 document.getElementById("reminderBtn").onclick = async function(event){
     event.preventDefault();
     let paymentSearchInput = document.getElementById("paymentSearchInput").value;
-    const paymentAllStudents = await getStudents();
-    let singleStudent = await paymentAllStudents.find(e => e.id === paymentSearchInput);
-    
-    
+    let paymentDetails = await getDueAmount(paymentSearchInput);
+        
     
     let a = document.createElement('a');
-    a.href = `mailto:${singleStudent.email}?subject=Payment Reminder&body=Hi ${singleStudent.firstname}, %0A%0AThis is a kindly reminder, You have a payment due. Please pay the amount asap. %0A%0AThank you.`;
+    a.href = `mailto:${paymentDetails.email}?subject=Payment Reminder&body=Hi ${paymentDetails.firstName}, %0A%0AThis is a kindly reminder, You have a payment due Rs.${paymentDetails.dueAmount}. Please pay the amount asap. %0A%0AThank you.`;
     a.click();
 }
 
 let paymentHistory = document.getElementById("paymentHistory");
 paymentHistory.onclick = async function(event){
     event.preventDefault();
-    let singleStudent = [];
+    
     let paymentSearchInput = document.getElementById("paymentSearchInput").value;
-    let allPayments = await getPayment();
+    let allPayments = await getPayment(paymentSearchInput);
+    
 
-    if(await allPayments.find(e => e.id === paymentSearchInput)){
+    if(allPayments != null && allPayments.length > 0){
+        
         let payHistoryDiv = document.getElementById("payHistoryDiv");
         payHistoryDiv.style.display = "block";
         
         let historyErr = document.getElementById("historyErr");
         historyErr.style.display = "none";
-    await allPayments.forEach(e => {
-        if(e.id === paymentSearchInput){
-            singleStudent.push(e);           
-        }
-    });
-    payHistory.innerHTML = "";
-    singleStudent.forEach(e => {
+    
+        let payHistory = document.getElementById("payHistory");
+        payHistory.innerHTML = "";
+        allPayments.forEach(e => {
 
         let row = document.createElement('tr');
         row.style.backgroundColor = "#80C574";
@@ -1029,26 +1026,33 @@ paymentHistory.onclick = async function(event){
         dateCell.style.padding = "20px";
         dateCell.style.textAlign = "center";
         dateCell.style.color = "White";
-        dateCell.textContent = e.date;
+        let date = new Date(e.date);
+        let day = date.getDate();
+        let months = ['Jan','Feb','Mar','Apr', 'May','Jun', 'Jul','Aug','Sep','Oct','Nov','Dec'];
+        let month = months[date.getMonth()];
+        let year = date.getFullYear();
+        dateCell.textContent = `${day}.${month}.${year}`;
         row.appendChild(dateCell);
 
         let feeCell = document.createElement('td');
         feeCell.style.padding = "20px";
         feeCell.style.textAlign = "center";
         feeCell.style.color = "White";
-        feeCell.textContent = e.fee;
+        feeCell.textContent = e.amount;
         row.appendChild(feeCell);
         
         payHistory.appendChild(row);
-
+        
     });
     
+    }else{
+  
 
-}else{
     payHistoryDiv.style.display = "none";
     historyErr.style.display = "block";
     historyErr.textContent = "No history";
     historyErr.style.color = "white";
+    
 
 }
 }

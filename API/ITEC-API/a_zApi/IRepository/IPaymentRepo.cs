@@ -7,5 +7,6 @@ namespace a_zApi.IRepository
     {
         Task addPayment(PaymentRequest paymentrequest);
         Task<PaymentResponse> getPayment(string studentId);
+        Task<List<SinglePaymentResponse>> getAllpaymentsById(string studentId);
     }
 }
