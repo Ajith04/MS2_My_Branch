@@ -38,5 +38,11 @@ namespace a_zApi.Controllers
             return Ok(data);
         }
 
+        [HttpGet ("get-all-due")]
+        public async Task<IActionResult> getAllDue()
+        {
+            var data = await _ipaymentservice.getAllDue ();
+            return Ok(data);
+        }
     }
 }

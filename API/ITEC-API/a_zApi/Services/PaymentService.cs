@@ -29,5 +29,11 @@ namespace a_zApi.Services
             var data = await _ipaymentrepo.getAllpaymentsById(studentId);
             return data;
         }
+
+        public async Task<List<PaymentResponse>> getAllDue()
+        {
+            var data = await _ipaymentrepo.getAllDue();
+            return data;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import {getFollowup} from '../api.js';
+import {getFollowup, updateDescription} from '../api.js';
 
 
 async function getAllStudents(){
@@ -26,7 +26,7 @@ reversed.forEach(e => {
         mobileCell.style.textAlign = "center";
         mobileCell.style.color = "#C54D4D";
         mobileCell.style.fontWeight = "bolder";
-        mobileCell.textContent = e.mobile;
+        mobileCell.innerHTML = `<a href="tel:${e.mobile}">${e.mobile}</a>`;
         row.appendChild(mobileCell);
 
         let courseCell = document.createElement('td');
@@ -38,7 +38,13 @@ reversed.forEach(e => {
         let dateCell = document.createElement('td');
         dateCell.style.padding = "20px";
         dateCell.style.textAlign = "center";
-        dateCell.textContent = e.date;
+
+        const date = new Date(e.date);
+        const day = date.getDate();
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const month = monthNames[date.getMonth()];
+        const year = date.getFullYear();
+        dateCell.textContent = `${day}.${month}.${year}`;
         row.appendChild(dateCell);
 
         let emailCell = document.createElement('td');
@@ -56,7 +62,46 @@ reversed.forEach(e => {
         let descriptionCell = document.createElement('td');
         descriptionCell.style.padding = "20px";
         descriptionCell.style.textAlign = "center";
-        descriptionCell.textContent = e.description;
+        let description = document.createElement('textarea');
+        description.value = e.description;
+        description.disabled = true;
+        descriptionCell.appendChild(description);
+
+
+        let container = document.createElement('div');
+        container.style.display = "flex";
+        container.style.justifyContent = "space-around";
+        let editBtn = document.createElement('button');
+        editBtn.innerText = "Edit";
+        editBtn.style.backgroundColor = "lightblue";
+        editBtn.style.boxShadow = "1px 1px 5px black";
+        editBtn.style.padding = "10px";
+        editBtn.style.border = "none";
+        editBtn.style.borderRadius = "10px";
+        editBtn.style.width = "60px";
+        editBtn.onclick = function(){
+            description.disabled = false;
+        }
+        container.appendChild(editBtn);
+
+        let updateBtn = document.createElement('button');
+        updateBtn.innerText = "Save";
+        updateBtn.style.backgroundColor = "orange";
+        updateBtn.style.boxShadow = "1px 1px 5px black";
+        updateBtn.style.padding = "10px";
+        updateBtn.style.border = "none";
+        updateBtn.style.borderRadius = "10px";
+        updateBtn.style.width = "60px";
+        updateBtn.onclick = function(){
+            let changeDescription = {email:e.email, description:description.value};
+
+            updateDescription(changeDescription);
+            alert('Successfully changed');
+        }
+        container.appendChild(updateBtn);
+        descriptionCell.appendChild(container);
+
+
         row.appendChild(descriptionCell);
 
         

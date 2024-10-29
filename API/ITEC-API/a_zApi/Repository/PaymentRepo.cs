@@ -1,5 +1,6 @@
 ﻿using a_zApi.DTO.RequestDto;
 using a_zApi.DTO.ResponseDto;
+using a_zApi.Enitity;
 using a_zApi.IRepository;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
@@ -101,6 +102,41 @@ namespace a_zApi.Repository
                 }
             }
             return paymentList;
+        }
+
+
+
+        public async Task<List<PaymentResponse>> getAllDue()
+        {
+            var paymentDetails = new List<PaymentResponse>();
+
+            string query = "SELECT Students.StudentId, Students.FirstName, Students.Mobile, Students.Email, (COALESCE((SELECT SUM(CourseFee) FROM Enrollments WHERE Enrollments.StudentId = Students.StudentId), 0) - COALESCE((SELECT SUM(Payment) FROM Payment WHERE Payment.StudentId = Students.StudentId), 0)) AS DueAmount FROM Students;";
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                           var payment = new PaymentResponse()
+                            {
+                                StudentId = reader.GetString(0),
+                                FirstName = reader.GetString(1),
+                                Mobile = reader.GetString(2),
+                                Email = reader.GetString(3),
+                                DueAmount = reader.GetInt32(4)
+
+                            };
+                            paymentDetails.Add(payment);
+                        }
+                    }
+                }
+            }
+            return paymentDetails;
         }
     }
 }

@@ -794,4 +794,14 @@ background-color: #04d827;
     width: 130px;
 }
 
+.dueTableContainer{
+    margin-top: 30px;
+    display: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+.dueTabe{
+    width: 600px;
+    text-align: center;
+    
+}

@@ -25,6 +25,11 @@ builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
 builder.Services.AddSingleton<IPaymentRepo>(provider => new PaymentRepo(connectionString));
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 
+builder.Services.AddSingleton<IFollowupRepo>(provider => new FollowupRepo(connectionString));
+builder.Services.AddScoped<IFollowupService, FollowupService>();
+
+builder.Services.AddSingleton<IIMRepo>(provider => new IMRepo(connectionString));
+builder.Services.AddScoped<IIMService, IMService>();
 
 
 

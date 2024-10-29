@@ -8,5 +8,6 @@ namespace a_zApi.IServices
         Task addPayment(PaymentRequest paymentrequest);
         Task<PaymentResponse> getPayment(string studentId);
         Task<List<SinglePaymentResponse>> getAllPaymentsById(string studentId);
+        Task<List<PaymentResponse>> getAllDue();
     }
 }

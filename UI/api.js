@@ -13,10 +13,10 @@ export async function getAdmin() {
 }
 
 export async function addStudents(obj){
-  await fetch('http://localhost:3000/followup',{
+  await fetch('http://localhost:5064/api/Followup/add-followup',{
     method:'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({"name":obj.Name, "mobile":obj.Mobile, "course":obj.Course, "date":obj.Date, "email":obj.Email, "address":obj.Address, "description":obj.Description})
+    body: JSON.stringify({"Name":obj.Name, "Mobile":obj.Mobile, "Course":obj.Course, "Date":obj.Date, "Email":obj.Email, "Address":obj.Address, "Description":obj.Description})
   })
   
 }
@@ -113,73 +113,67 @@ export async function getPayment(studentId) {
 
 
 export async function addModule(obj){
-  await fetch('http://localhost:3000/modules',{
+  await fetch('http://localhost:5064/api/IM/add-module',{
     method:'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({"title":obj.mModuleTitle, "course":obj.mCourseList, "batch":obj.mModulebatch, "date":obj.mModuleDate, "file":obj.mModuleFile, "description":obj.mModuleDescription})
+    body: obj
   })
   
 }
 
 export async function getAllModules() {
-  const response = await fetch('http://localhost:3000/modules');
+  const response = await fetch('http://localhost:5064/api/IM/get-modules');
   const data = await response.json();
   return data;
 }
 
 
-export async function addExpense(obj){
-  await fetch('http://localhost:3000/expense',{
-    method:'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({"title":obj.title, "date":obj.date, "price":obj.price, "receipt":obj.receipt, "file":obj.mModuleFile, "description":obj.description})
-  })
+// export async function addExpense(obj){
+//   await fetch('http://localhost:3000/expense',{
+//     method:'POST',
+//     headers: {'Content-Type': 'application/json'},
+//     body: JSON.stringify({"title":obj.title, "date":obj.date, "price":obj.price, "receipt":obj.receipt, "file":obj.mModuleFile, "description":obj.description})
+//   })
   
-}
+// }
 
 
 export async function changeRegFee(newReg){
-  await fetch('http://localhost:3000/registrationfee/1', {
+  await fetch(`http://localhost:5064/api/IM/change-reg-fee?regFee=${newReg}`, {
   method: 'PATCH',
   headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({ regfee: newReg })
+
 })      
 }
 
-export async function getRegFee() {
-  const response = await fetch('http://localhost:3000/registrationfee');
-  const data = await response.json();
-  return data;
-}
 
 
-export async function addBatch(obj){
-  await fetch('http://localhost:3000/batch',{
+export async function addBatch(batch){
+  await fetch(`http://localhost:5064/api/IM/add-new-batch?batch=${batch}`,{
     method:'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({"batchname":obj.batch})
+
   })
   
 }
 
 export async function getBatch() {
-  const response = await fetch('http://localhost:3000/batch');
+  const response = await fetch('http://localhost:5064/api/IM/get-all-batches');
   const data = await response.json();
   return data;
 }
 
 
 export async function getFollowup() {
-  const response = await fetch('http://localhost:3000/followup');
+  const response = await fetch('http://localhost:5064/api/Followup/get-all-followup');
   const data = await response.json();
   return data;
 }
 
-export async function getExpense() {
-  const response = await fetch('http://localhost:3000/expense');
-  const data = await response.json();
-  return data;
-}
+// export async function getExpense() {
+//   const response = await fetch('http://localhost:3000/expense');
+//   const data = await response.json();
+//   return data;
+// }
 
 export async function getCourseIDFee(courseName) {
   const response = await fetch(`http://localhost:5064/api/Course/get-course-id-fee?courseName=${courseName}`);
@@ -237,6 +231,29 @@ export async function getDueAmount(studentId) {
   const data = await response.json();
   return data;
 }
+
+export async function updateDescription(obj){
+  await fetch('http://localhost:5064/api/Followup/update-description', {
+  method: 'PATCH',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({ "Email":obj.email, "Description":obj.description })
+})      
+}
+
+export async function getAllDue() {
+  const response = await fetch('http://localhost:5064/api/Payment/get-all-due');
+  const data = await response.json();
+  return data;
+}
+
+export async function getDefaultRegFee() {
+  const response = await fetch('http://localhost:5064/api/IM/get-reg-fee');
+  const data = await response.json();
+  return data;
+}
+
+
+
 
 
 

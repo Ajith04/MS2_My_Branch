@@ -1,4 +1,4 @@
-import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, getPayment, addModule, getAllModules, addExpense, changeRegFee, getRegFee, addBatch, getBatch, getExpense, getCourseIDFee, createEnrollment, addRegFee, addStudentAccount, addPayment, getDueAmount} from '../api.js';
+import {addStudents, updateStudent, removeSingleStudent, addNewCourse, getSingleCourse, getCourses, addNewStudent, courseUpdate, deleteSingleCourse, getStudentById, getStudents, getPayment, addModule, getAllModules, changeRegFee, addBatch, getBatch, getCourseIDFee, createEnrollment, addRegFee, addStudentAccount, addPayment, getDueAmount, getAllDue, getDefaultRegFee} from '../api.js';
 
 
 
@@ -364,8 +364,8 @@ let allBatches = await getBatch();
 let reversedBatch = allBatches.reverse();
 reversedBatch.forEach(e => {
     let option = document.createElement('option');
-    option.value = e.batchname;
-    option.text = e.batchname;
+    option.value = e.batchName;
+    option.text = e.batchName;
     stuBatch.appendChild(option);
 })
 
@@ -390,8 +390,11 @@ function generatePassword(length) {
     return password;
 }
 
+let reg = await getDefaultRegFee();
+
 let stuRegFee = document.getElementById("stuRegFee");
-stuRegFee.value = parseInt('1500');
+
+stuRegFee.value = reg.fee;
 
 document.getElementById("register").addEventListener('submit', async function(event){
     event.preventDefault();
@@ -575,7 +578,7 @@ document.getElementById("removeSearch").onclick = async function(){
     removeDynamic.style.display = "flex";
     document.getElementById("removeId").innerText = singleStudent.nicNo;
     document.getElementById("removeName").innerText = singleStudent.firstName;
-    document.getElementById("removeBatch").innerText = '';
+    document.getElementById("removeBatch").innerText = singleStudent.courseName;
     }
     else{
         removeDynamic.style.display = "none";
@@ -911,8 +914,6 @@ async function displayLastCourses(){
         row.style.color = "black";
         row.style.borderBottom = "1px solid black";
         
-        
-
         let idCell = document.createElement('td');
         idCell.style.padding = "3px";
         idCell.textContent = e.courseId;
@@ -943,6 +944,12 @@ displayLastCourses();
 
 
 document.getElementById("paymentSearchBtn").onclick = async function(){
+
+    let payDiv = document.getElementById("payDiv");
+    let allDue = document.getElementById("allDue");
+    payDiv.style.display = "block";
+    allDue.style.display = "none"
+
     let paymentSearchInput = document.getElementById("paymentSearchInput").value;
     const singleStudent = await getStudentById(paymentSearchInput);
 
@@ -957,7 +964,7 @@ document.getElementById("paymentSearchBtn").onclick = async function(){
 
         document.getElementById("idCell").textContent = paymentDetails.studentId;
         document.getElementById("nameCell").textContent = paymentDetails.firstName;
-        document.getElementById("mobileCell").textContent = paymentDetails.mobile;
+        document.getElementById("mobileCell").innerHTML = `<a href="tel:${paymentDetails.mobile}">${paymentDetails.mobile}</a>`;
         document.getElementById("payableCell").textContent = paymentDetails.dueAmount;
 
         
@@ -1055,7 +1062,59 @@ paymentHistory.onclick = async function(event){
     
 
 }
+
 }
+
+let allDueBtn = document.getElementById("allDueBtn");
+allDueBtn.onclick = async function(){
+    payDiv.style.display = "none";
+    allDue.style.display = "flex"
+    payHistoryDiv.style.display = "none";
+    historyErr.style.display = "none";
+    err.style.display = "none";
+
+    let allStudentsDue = await getAllDue();
+    
+
+    let allDueBody = document.getElementById("allDueBody");
+    allStudentsDue.forEach(e => {
+    let row = document.createElement('tr');
+
+        let idCell = document.createElement('td');
+        idCell.textContent = e.studentId;
+        row.appendChild(idCell);
+
+        let nameCell = document.createElement('td');
+        nameCell.textContent = e.firstName;
+        row.appendChild(nameCell);
+
+        let mobileCell = document.createElement('td');
+        mobileCell.textContent = e.mobile;
+        row.appendChild(mobileCell);
+
+        let dueAmountCell = document.createElement('td');
+        dueAmountCell.textContent = e.dueAmount;
+        dueAmountCell.style.color = "red";
+        row.appendChild(dueAmountCell);
+
+        let actionCell = document.createElement('td');
+        let callBtn = document.createElement('button');
+        callBtn.style.backgroundColor = "lightgreen";
+        callBtn.style.borderRadius = "3px";
+        callBtn.style.padding = "3px";
+        callBtn.style.boxShadow = "1px 1px 5px black";
+        callBtn.style.border = "none";
+        callBtn.innerHTML = `<a href="tel:${e.mobile}"><span class="material-symbols-outlined">call</span></a>`;
+        actionCell.appendChild(callBtn);
+        row.appendChild(actionCell);
+
+        allDueBody.appendChild(row)
+        
+    })
+;
+}
+
+
 
 addPaymentShortcut.onclick = function(){
     feeManagement.style.display = "flex";
@@ -1066,8 +1125,6 @@ addPaymentShortcut.onclick = function(){
     tabFeeManagement.style.backgroundColor = "White";
     tabFeeManagement.style.color = "black";
     tabFeeManagement.style.borderRight = "none";
-    
-
 }
 
 let addmoduleBtn = document.getElementById("addmoduleBtn");
@@ -1107,8 +1164,8 @@ let batches = await getBatch();
 let reversedBatches = batches.reverse();
 reversedBatches.forEach(e => {
     let option = document.createElement('option');
-    option.value = e.batchname;
-    option.text = e.batchname;
+    option.value = e.batchName;
+    option.text = e.batchName;
     moduleBatch.appendChild(option);
 })
 
@@ -1121,12 +1178,19 @@ let moduleTitle = document.getElementById("moduleTitle").value;
 let courseList = document.getElementById("courseList").value;
 let moduleBatch = document.getElementById("moduleBatch").value;
 let moduleDate = document.getElementById("moduleDate").value;
-let moduleFile = document.getElementById("moduleFile").value;
+let moduleFile = document.getElementById("moduleFile").files[0];
 let ModuleDescription = document.getElementById("ModuleDescription").value;
 
-let moduleObj = {mModuleTitle:moduleTitle, mCourseList:courseList, mModulebatch:moduleBatch, mModuleDate:moduleDate, mModuleFile:moduleFile, mModuleDescription:ModuleDescription};
+const modules = new FormData();
+    modules.append('Title',moduleTitle);
+    modules.append('Course',courseList);
+    modules.append('Batch',moduleBatch);
+    modules.append('Date',moduleDate);
+    modules.append('Module',moduleFile);
+    modules.append('Description',ModuleDescription);
 
-await addModule(moduleObj);
+
+await addModule(modules);
 
 alert("Successfully added");
 
@@ -1137,6 +1201,7 @@ alert("Successfully added");
 async function getModules(){
 
     let allModules = await getAllModules();
+    
 
     let reversedModules = await allModules.reverse();
     
@@ -1175,14 +1240,23 @@ reversedModules.forEach(e => {
         dateCell.style.padding = "20px";
         dateCell.style.textAlign = "center";
         dateCell.style.border = "1px solid white";
-        dateCell.textContent = e.date;
+
+        const date = new Date(e.date);
+        const day = date.getDate();
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const month = monthNames[date.getMonth()];
+        const year = date.getFullYear();
+        
+        dateCell.textContent = `${day}.${month}.${year}`;
         row.appendChild(dateCell);
 
         let fileCell = document.createElement('td');
         fileCell.style.padding = "20px";
         fileCell.style.textAlign = "center";
         fileCell.style.border = "1px solid white";
-        fileCell.textContent = e.file;
+        fileCell.innerHTML = `<a href="" download><span class="material-symbols-outlined">
+download
+</span></a>`;
         row.appendChild(fileCell);
 
         let descriptionCell = document.createElement('td');
@@ -1248,7 +1322,7 @@ document.getElementById("regClose").onclick = function(){
 
 document.getElementById("regForm").addEventListener('submit', async function(event){
 event.preventDefault();
-let newReg = document.getElementById("newReg").value;
+let newReg = parseInt(document.getElementById("newReg").value);
 await changeRegFee(newReg);
 
 event.target.reset();
@@ -1270,7 +1344,7 @@ event.preventDefault();
 
 let batches = await getBatch();
 let batchName = document.getElementById("batchName").value;
-if(await batches.find(e => e.batchname === batchName)){
+if(await batches.find(e => e.batchName === batchName)){
     let exists = document.getElementById("exists");
     exists.textContent = "Already exists";
     exists.style.color = "white";
@@ -1278,8 +1352,7 @@ if(await batches.find(e => e.batchname === batchName)){
     exists.style.marginBottom = "10px";
 }else{
 exists.textContent = "";
-let batchObj = {batch:batchName};
-await addBatch(batchObj);
+await addBatch(batchName);
 alert("Successfully added");
 
 }
@@ -1311,8 +1384,8 @@ let imBatchList = document.getElementById("imBatchList");
 
 reversedImBatches.forEach(e => {
     let imBatchOption = document.createElement('option');
-    imBatchOption.value = e.batchname;
-    imBatchOption.text = e.batchname;
+    imBatchOption.value = e.batchName;
+    imBatchOption.text = e.batchName;
     imBatchList.appendChild(imBatchOption);
     
 })

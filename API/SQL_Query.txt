@@ -147,3 +147,64 @@ insert into Payment values
 
 
 
+create table FollowUp(
+[Name] nvarchar (20),
+mobile nvarchar (20),
+Course nvarchar (20),
+[Date] date,
+Email nvarchar (50),
+[Address] nvarchar (100),
+[Description] nvarchar (250)
+);
+
+insert into FollowUp values
+('Ajith', '0755255050', 'HTML', '01-01-2024', 'sritharanajith04@gmail.com', 'New road', 'Next month will join'),
+('Kajitha', '0715486950', 'CSS', '01-05-2024', '1234@gmail.com', 'Jaffna', 'must be call again'),
+('Nitharsan', '0875469201', 'C#', '11-08-2024', '4567@gmail.com', 'Kilinochchi', 'after A/L'),
+('Imthath', '0356478152', 'C#', '06-10-2024', 'sample@gmail.com', 'Mullaitivu', 'Next week must call'),
+('Safeek', '0217524635', 'API', '10-09-2024', 'qwerty@gmail.com', 'Vavuniya', 'Next week will join'),
+('Logaash', '0235689475', 'Angular', '04-11-2024', 'asdf@gmail.com', 'Mannar', 'must confirm'),
+('Jathusan', '0284672491', 'Angular', '03-08-2024', 'devorak@gmail.com', 'Colombo', 'Dont call'),
+('Aaruran', '0135649812', 'JavaScript', '03-07-2024', 'jarachumnamethaanka@gmail.com', 'Chilaw', 'Next month will join'),
+('Piragash', '0741253150', 'API', '10-02-2024', 'ithkkumela@gmail.com', 'Negambo', 'he will not follow'),
+('Thayuran', '0215759641', 'CSS', '06-02-2024', 'peyarilla@gmail.com', 'Puttalam', 'confirmed but must reconfirm');
+
+create table RegFee(
+RegFee int
+);
+
+insert into RegFee values
+(1500);
+
+
+
+create table Batch(
+Batch nvarchar (20)
+);
+
+insert into Batch values
+('Weekday'),
+('Weekend'),
+('Morning'),
+('Evening'),
+('Afternoon');
+
+
+create table Modules(
+Title nvarchar (50),
+Course nvarchar (20),
+Batch nvarchar (20),
+PublishedDate date,
+module varbinary (max),
+[Description] nvarchar (255)
+);
+
+insert into Modules values
+('OOP Concept', 'Java', 'Weekday', '02-05-2024', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/CSharp Answer.pdf', SINGLE_BLOB) AS ImageFile),'Homework added'),
+('DOM', 'JavaScript', 'Weekend', '10-05-2024', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/HTML Answer.pdf', SINGLE_BLOB) AS ImageFile),'03 Assignments added'),
+('Animations', 'CSS', 'Weekend', '02-07-2024', (SELECT * FROM OPENROWSET(BULK N'E:\MS2-Final\MS2_My_Branch\API\Course_Images/CSS Answer.pdf', SINGLE_BLOB) AS ImageFile),'Homework added');
+
+
+
+
+

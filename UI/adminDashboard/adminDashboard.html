@@ -527,7 +527,7 @@
                 
                 <img src="../assets/icons/search.png" alt="" width="40px" class="material-symbols-outlined editCol search paymentSearch" id="paymentSearchBtn">
         </div>
-        <div class="BtnCol"><button class="paymentSearchBtn">Show all due</button></div>
+        <div class="BtnCol"><button class="paymentSearchBtn" id="allDueBtn">Show all due</button></div>
         </div>
 
         <form class="singleStudentPayment" id="payDiv">
@@ -558,6 +558,28 @@
             <div class="paymentHistoryLink" id="reminderBtn"><a href="">Send a Reminder</a></div>
             <div class="paymentHistoryLink" id="paymentHistory"><a href="">View Payment History</a></div>
         </form>
+
+
+        <!-- all Due section -->
+       
+        <div class="dueTableContainer" id="allDue">
+            <table class="dueTabe">
+                <thead>
+                <tr class="">
+                    <th>StudentId</th>
+                    <th>Name</th>
+                    <th>Mobile No</th>
+                    <th>Due Amount</th>
+                    <th>Call</th>
+                </tr>
+            </thead>
+            <tbody id="allDueBody">
+        
+            </tbody>
+            </table>
+        </div>
+
+        <!-- End of all due section -->
 
         <div class="err" id="err"></div>
         <div class="paymentHistory" id="payHistoryDiv">

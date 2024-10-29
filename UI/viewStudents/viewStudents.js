@@ -53,7 +53,7 @@ async function getAllStudents(){
         let mobilecell = document.createElement('td');
         mobilecell.style.padding = "20px";
         mobilecell.style.textAlign = "center";
-        mobilecell.textContent = e.mobileNo;
+        mobilecell.innerHTML = `<a href="tel:${e.mobileNo}">${e.mobileNo}</a>`;
         row.appendChild(mobilecell);
 
         let emailcell = document.createElement('td');
