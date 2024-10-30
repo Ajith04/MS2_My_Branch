@@ -63,6 +63,7 @@ reversed.forEach(e => {
         descriptionCell.style.padding = "20px";
         descriptionCell.style.textAlign = "center";
         let description = document.createElement('textarea');
+        description.style.borderRadius = "10px"
         description.value = e.description;
         description.disabled = true;
         descriptionCell.appendChild(description);
